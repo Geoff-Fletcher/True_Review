@@ -27,7 +27,7 @@ class Category(models.Model):
 
 
 class CommonReviewData(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     featured_image = CloudinaryField('image', default='placeholder')
     title = models.CharField(max_length=100)
     rating = models.IntegerField(validators=[
@@ -38,6 +38,7 @@ class CommonReviewData(models.Model):
     review_text = models.TextField()
     release_date = models.DateField()
     status = models.IntegerField(choices=STATUS, default=0)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ["created_on"]
@@ -66,7 +67,7 @@ class GameReview(CommonReviewData):
 
 class Comment(models.Model):
     post = models.ForeignKey(
-    Post, on_delete=models.CASCADE, related_name="comments")
+    CommonReviewData, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="commenter")
     rating = models.IntegerField(validators=[
