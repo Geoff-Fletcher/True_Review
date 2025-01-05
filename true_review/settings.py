@@ -38,6 +38,8 @@ ALLOWED_HOSTS = ['.gitpod.io', '8000-geofffletche-truereview-6klku1vvrwi.ws.code
 '.herokuapp.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-geofffletche-truereview-6klku1vvrwi.ws.codeinstitute-ide.net']
+
 
 # Application definition
 
