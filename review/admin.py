@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import MovieReview, TVReview, GameReview, Comment
+from django.db import models
+from .models import MovieReview, TVReview, GameReview, Comment, CommonReviewData
+
+STATUS = ((0, "Draft"), (1, "Published"))
 
 # Full admin setup for MovieReview
 @admin.register(MovieReview)
@@ -69,5 +72,4 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
     approve_comments.short_description = "Mark selected comments as approved"
-
 
