@@ -68,11 +68,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'true_review.urls'
 
+# settings.py
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
-        'APP_DIRS': True,
+        'DIRS': [],  # No need for any global templates directory, so leave it empty
+        'APP_DIRS': True,  # Ensures Django will look for templates in your app's templates folder
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -83,6 +85,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'true_review.wsgi.application'
 
