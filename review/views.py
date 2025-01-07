@@ -1,65 +1,31 @@
-"""from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic
-from django.contrib import messages
-from django.http import HttpResponseRedirect
-## from .models import CommonReviewData, Category, MovieReview, TVReview, GameReview, Comment
-## from .forms import CommentForm
+from django.core.paginator import Paginator
+from django.shortcuts import render
+from .models import MovieReview, TVReview, GameReview
 
-# Create your views here.
-
-class CommonReviewDataList(generic.ListView):
-    queryset = CommonReviewData.objects.filter(author=1)
-    template_name = "review/index.html"
-    paginate_by = 6
-
-def post_detail(request, slug):
-
-    Display an individual :model:`Review`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`Review`.
-
-    **Template:**
-
-    :template:`blog/post_detail.html`
-    
-
-    queryset = CommonReviewData.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comments = post.comments.all().order_by("-created_on")
-    comment_count = post.comments.filter(approved=True).count()
-
-    if request.method == "POST":
-        print("Received a POST request")
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.post = post
-            comment.save()
-            messages.add_message(
-            request, messages.SUCCESS,
-            'Comment submitted and awaiting approval'
+def index(request):
+    # Combine all reviews into a single queryset
+    reviews = (
+        MovieReview.objects.filter(status=1)
+        .union(TVReview.objects.filter(status=1))
+        .union(GameReview.objects.filter(status=1))
+        .order_by('-created_on')  # Sort by creation date (newest first)
     )
 
+    # Paginate the combined queryset
+    paginator = Paginator(reviews, 9)  # Show 9 reviews per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-    comment_form = CommentForm()
-    print("About to render template")
+    # Pass the paginated reviews to the template
+    context = {
+        'post_list': page_obj,
+        'page_obj': page_obj,
+        'is_paginated': page_obj.has_other_pages(),
+    }
+    return render(request, 'index.html', context)
 
-    return render(
-    request,
-    "blog/post_detail.html",
-    {
-        "post": post,
-        "comments": comments,
-        "comment_count": comment_count,
-        "comment_form": comment_form,
-    },
-    )
 
-def comment_edit(request, slug, comment_id):
+"""def comment_edit(request, slug, comment_id):
     
     if request.method == "POST":
 
