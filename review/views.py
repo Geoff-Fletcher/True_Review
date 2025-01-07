@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+"""from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import CommonReviewData, Category, MovieReview, TVReview, GameReview, Comment
-from .forms import CommentForm
+## from .models import CommonReviewData, Category, MovieReview, TVReview, GameReview, Comment
+## from .forms import CommentForm
 
 # Create your views here.
 
@@ -13,7 +13,7 @@ class CommonReviewDataList(generic.ListView):
     paginate_by = 6
 
 def post_detail(request, slug):
-    """
+
     Display an individual :model:`Review`.
 
     **Context**
@@ -24,7 +24,7 @@ def post_detail(request, slug):
     **Template:**
 
     :template:`blog/post_detail.html`
-    """
+    
 
     queryset = CommonReviewData.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -80,9 +80,9 @@ def comment_edit(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 def comment_delete(request, slug, comment_id):
-    """
+    
     view to delete comment
-    """
+    
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -95,4 +95,4 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-# Create your views here.
+# Create your views here."""
