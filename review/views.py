@@ -3,15 +3,24 @@ from django.shortcuts import render
 from .models import MovieReview, TVReview, GameReview
 
 def index(request):
-    # Combine all reviews into a single queryset
-    reviews = (
-        MovieReview.objects.filter(status=1)
-        .union(TVReview.objects.filter(status=1))
-        .union(GameReview.objects.filter(status=1))
-        .order_by('-created_on')  # Sort by creation date (newest first)
+    # Combine reviews using only the common fields
+    movie_reviews = MovieReview.objects.filter(status=1).values(
+        'id', 'title', 'author', 'slug', 'featured_image', 'rating', 'release_date', 'created_on', 'category'
+    )
+    tv_reviews = TVReview.objects.filter(status=1).values(
+        'id', 'title', 'author', 'slug', 'featured_image', 'rating', 'release_date', 'created_on', 'category'
+    )
+    game_reviews = GameReview.objects.filter(status=1).values(
+        'id', 'title', 'author', 'slug', 'featured_image', 'rating', 'release_date', 'created_on', 'category'
     )
 
-    # Paginate the combined queryset
+    # Combine all reviews and sort by creation date
+    reviews = sorted(
+        list(movie_reviews) + list(tv_reviews) + list(game_reviews),
+        key=lambda x: x['created_on'], reverse=True
+    )
+
+    # Paginate the combined reviews
     paginator = Paginator(reviews, 9)  # Show 9 reviews per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -23,6 +32,7 @@ def index(request):
         'is_paginated': page_obj.has_other_pages(),
     }
     return render(request, 'index.html', context)
+
 
 
 """def comment_edit(request, slug, comment_id):
