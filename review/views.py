@@ -7,9 +7,9 @@ from .forms import CommentForm
 
 # Create your views here.
 
-class ReviewList(generic.ListView):
-    queryset = Post.objects.filter(author=1)
-    template_name = "blog/index.html"
+class CommonReviewDataList(generic.ListView):
+    queryset = CommonReviewData.objects.filter(author=1)
+    template_name = "review/index.html"
     paginate_by = 6
 
 def post_detail(request, slug):
@@ -26,7 +26,7 @@ def post_detail(request, slug):
     :template:`blog/post_detail.html`
     """
 
-    queryset = Post.objects.filter(status=1)
+    queryset = CommonReviewData.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
@@ -63,7 +63,7 @@ def comment_edit(request, slug, comment_id):
     
     if request.method == "POST":
 
-        queryset = Post.objects.filter(status=1)
+        queryset = CommonReviewData.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
