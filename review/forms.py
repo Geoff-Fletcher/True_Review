@@ -4,4 +4,4 @@ from .models import MovieReview
 class MovieReviewForm(forms.ModelForm):
     class Meta:
         model = MovieReview
-        fields = ['featured_image', 'title', 'rating', 'slug', 'review_text', 'release_date', 'runtime', 'director']
+        fields = ['featured_image', 'title', 'rating', 'review_text', 'release_date', 'runtime', 'director']

@@ -17,7 +17,8 @@ def review_detail(request, review_id):
 def index(request):
     # Combine reviews using only the common fields
     movie_reviews = MovieReview.objects.filter(status=1).values(
-        'id', 'title', 'author', 'slug', 'featured_image', 'rating', 'release_date', 'created_on', 'category'
+        'id', 'title', 'author', 'slug', 'featured_image', 'rating',
+        'release_date', 'created_on', 'category'
     )
     tv_reviews = TVReview.objects.filter(status=1).values(
         'id', 'title', 'author', 'slug', 'featured_image', 'rating', 'release_date', 'created_on', 'category'
@@ -45,17 +46,17 @@ def index(request):
     }
     return render(request, 'review/index.html', context)
 
-    def create_movie_review(request):
-        if request.type == "POST":
-            movie_review_form = MovieReviewForm(request.POST)
-        else: # for the GET request (i.e. user types url into browser or clicks a link)
-            movie_review_form = MovieReviewForm()
+def create_movie_review(request):
+    if request.method == "POST":
+        movie_review_form = MovieReviewForm(request.POST)
+    else: # for the GET request (i.e. user types url into browser or clicks a link)
+        movie_review_form = MovieReviewForm()
 
-            context = {
-                "form": review_form,
-            }
+        context = {
+            "form": movie_review_form,
+        }
 
-            return render(request, 'review/create_moviereview.html', context)
+        return render(request, 'review/create_moviereview.html', context)
 
 
 

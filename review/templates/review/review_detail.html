@@ -7,7 +7,7 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Review title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
+                <h1 class="post-title">{{ review.title }}</h1>
                 <!-- Review author goes before the | the review's created date goes after -->
                 <p class="review-subtitle">{{ review.author }} | {{ review.created_on }}</p>
             </div>
@@ -29,7 +29,7 @@
                 <!-- The review content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
-                    {{ review.content | safe }}
+                    {{ review.review_text | safe }}
                 </p>
             </div>
         </div>
