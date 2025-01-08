@@ -1,6 +1,18 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render
-from .models import MovieReview, TVReview, GameReview
+from django.shortcuts import render, get_object_or_404
+from .models import MovieReview, TVReview, GameReview, CommonReviewData
+from .forms import MovieReviewForm
+
+
+def review_detail(request, review_id):
+    requested_review = get_object_or_404(CommonReviewData, id=review_id)
+    print('review == ', requested_review)
+
+    context = {
+        "review" : requested_review,
+    }
+
+    return render(request, 'review/review_detail.html', context)
 
 def index(request):
     # Combine reviews using only the common fields
@@ -32,6 +44,19 @@ def index(request):
         'is_paginated': page_obj.has_other_pages(),
     }
     return render(request, 'review/index.html', context)
+
+    def create_movie_review(request):
+        if request.type == "POST":
+            movie_review_form = MovieReviewForm(request.POST)
+        else: # for the GET request (i.e. user types url into browser or clicks a link)
+            movie_review_form = MovieReviewForm()
+
+            context = {
+                "form": review_form,
+            }
+
+            return render(request, 'review/create_moviereview.html', context)
+
 
 
 

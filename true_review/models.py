@@ -46,6 +46,10 @@ class CommonReviewData(models.Model):
     def __str__(self):
         return f"{self.title} | written by {self.author}, {self.created_on}"
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.review_text)
+        super().save(*args, **kwargs)
+
 
 class MovieReview(CommonReviewData):
     runtime = models.DurationField()
