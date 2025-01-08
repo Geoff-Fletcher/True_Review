@@ -7,7 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Full admin setup for MovieReview
 @admin.register(MovieReview)
 class MovieReviewAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'rating', 'status', 'created_on', 'release_date', 'director', 'runtime')
+    list_display = ('title', 'author', 'rating', 'status', 'created_on', 'release_date', 'director', 'runtime',)
     list_filter = ('status', 'created_on', 'release_date', 'rating')
     search_fields = ('title', 'author__username', 'director')
     prepopulated_fields = {'slug': ('title',)}
@@ -26,7 +26,7 @@ class MovieReviewAdmin(admin.ModelAdmin):
 # Full admin setup for TVReview
 @admin.register(TVReview)
 class TVReviewAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'rating', 'status', 'created_on', 'release_date', 'showrunner', 'number_of_episodes', 'average_episode_length')
+    list_display = ('title', 'author', 'rating', 'status', 'created_on', 'release_date', 'showrunner', 'number_of_episodes', 'average_episode_length',)
     list_filter = ('status', 'created_on', 'release_date', 'rating')
     search_fields = ('title', 'author__username', 'showrunner')
     prepopulated_fields = {'slug': ('title',)}
@@ -45,7 +45,7 @@ class TVReviewAdmin(admin.ModelAdmin):
 # Full admin setup for GameReview
 @admin.register(GameReview)
 class GameReviewAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'rating', 'status', 'created_on', 'release_date', 'studio', 'time_to_beat', 'number_of_players')
+    list_display = ('title', 'author', 'rating', 'status', 'created_on', 'release_date', 'studio', 'time_to_beat', 'number_of_players',)
     list_filter = ('status', 'created_on', 'release_date', 'rating')
     search_fields = ('title', 'author__username', 'studio')
     prepopulated_fields = {'slug': ('title',)}
