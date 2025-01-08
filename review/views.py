@@ -31,7 +31,7 @@ def index(request):
         'page_obj': page_obj,
         'is_paginated': page_obj.has_other_pages(),
     }
-    return render(request, 'index.html', context)
+    return render(request, 'review/index.html', context)
 
 
 
