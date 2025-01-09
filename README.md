@@ -1,3 +1,15 @@
+# True Review
+
+(Developer: Geoff Fletcher)
+
+am i responsive placeholder
+
+## Live website
+
+Link to live website:
+## Why True Review?
+
+
 ## Table of contents ##
 - User experience (UX)
 - Key project goals
