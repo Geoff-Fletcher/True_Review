@@ -163,3 +163,13 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+.social-link {
+    color: white; /* Initial link color */
+    text-decoration: none; /* Removes underline */
+}
+
+.social-link:hover {
+    color: #f39c12; /* Highlight color on hover */
+    text-decoration: none; /* Ensures underline stays off */
+}
