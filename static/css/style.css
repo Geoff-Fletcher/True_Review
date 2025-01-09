@@ -34,6 +34,10 @@ body {
     background-color: transparent;
 }
 
+.review-card {
+    background: #fff;
+}
+
 .image-container {
     position: relative;
 }
@@ -67,8 +71,8 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
+    background-color: #484c52;
+    color: #CBA17B;
     position: relative;
 }
 

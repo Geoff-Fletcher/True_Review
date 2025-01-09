@@ -2,7 +2,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from.models import MovieReview, TVReview, GameReview, CommonReviewData
-from.forms import MovieReviewForm
+from.forms import MovieReviewForm, CommentForm
 
 
 def review_detail(request, review_id):
@@ -72,41 +72,59 @@ def create_movie_review(request):
 
 
 
-"""def comment_edit(request, slug, comment_id):
+def comment_edit(request, slug, comment_id):
+  
+      # Fetch the corresponding CommonReviewData post
+    queryset = CommonReviewData.objects.filter(status=1)  # Only published reviews
+    post = get_object_or_404(queryset, slug=slug)
 
+    # Fetch the comment by ID
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    # Check if the request is a POST
     if request.method == "POST":
+        # Bind the comment form with data
+        comment_form = CommentForm(data=request.POST, instance=comment)
 
-    queryset = CommonReviewData.objects.filter(status = 1)
-post = get_object_or_404(queryset, slug = slug)
-comment = get_object_or_404(Comment, pk = comment_id)
-comment_form = CommentForm(data = request.POST, instance = comment)
+        # Check if the form is valid and the author is the logged-in user
+        if comment_form.is_valid() and comment.author == request.user:
+            # Save the comment
+            updated_comment = comment_form.save(commit=False)
+            updated_comment.post = post
+            updated_comment.approved = False  # Mark as unapproved until reviewed
+            updated_comment.save()
 
-if comment_form.is_valid() and comment.author == request.user:
-    comment = comment_form.save(commit = False)
-comment.post = post
-comment.approved = False
-comment.save()
-messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
-else :
-    messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            # Add a success message
+            messages.add_message(request, messages.SUCCESS, 'Comment updated!')
+        else:
+            # Add an error message if validation fails
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
-return HttpResponseRedirect(reverse('#', args = [slug]))
+        # Redirect back to the same page or slug URL
+        return HttpResponseRedirect(reverse('some_view_name', args=[slug]))
+
+    # If not a POST request, render the page as usual (optional)
+    return redirect('some_view_name', slug=slug)
+
 
 def comment_delete(request, slug, comment_id):
+    
+    # Fetch the corresponding CommonReviewData post
+    queryset = CommonReviewData.objects.filter(status=1)  # Only published reviews
+    post = get_object_or_404(queryset, slug=slug)
 
-    view to delete comment
+    # Fetch the comment by ID
+    comment = get_object_or_404(Comment, pk=comment_id)
 
-queryset = Post.objects.filter(status = 1)
-post = get_object_or_404(queryset, slug = slug)
-comment = get_object_or_404(Comment, pk = comment_id)
+    # Ensure the comment can only be deleted by the author
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-if comment.author == request.user:
-    comment.delete()
-messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
-else :
-    messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
-
-return HttpResponseRedirect(reverse('#', args = [slug]))"""
+    # Redirect back to the same page or slug URL
+    return HttpResponseRedirect(reverse('some_view_name', args=[slug]))
 
 # Create your views here.
 

@@ -25,7 +25,7 @@
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
+            <div class="card-body review-card">
                 <!-- The review content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
@@ -49,7 +49,7 @@
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
-            <div class="card-body">
+            <div class="card-body review-card">
                 <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
                 {% for comment in comments %}
@@ -82,7 +82,7 @@
 
         <!-- Creating New Comments -->
         <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
+            <div class="card-body review-card">
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
