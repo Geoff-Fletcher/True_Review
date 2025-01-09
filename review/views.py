@@ -53,8 +53,10 @@ def create_movie_review(request):
     if request.method == "POST":
         movie_review_form = MovieReviewForm(request.POST)
         if movie_review_form.is_valid():
-           movie_review_form.save()
-           messages.success(request, "Review created successfully!")
+            movie_review_form.save()
+            messages.success(request, "Review created successfully!")
+        else:
+            print(form.errors)
         return redirect('index')
     else: #the GET request (i.e. user types url into browser or clicks a link)
         movie_review_form = MovieReviewForm()
