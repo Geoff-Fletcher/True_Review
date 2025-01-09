@@ -55,7 +55,6 @@ def create_movie_review(request):
         if movie_review_form.is_valid():
             movie_review = movie_review_form.save(commit=False)
             movie_review.author = request.user
-            movie_review.post = post
             movie_review_form.save()
             messages.success(request, "Review created successfully!")
         else:
