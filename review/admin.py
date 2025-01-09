@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from .models import MovieReview, TVReview, GameReview, Comment, CommonReviewData
+from django_summernote.admin import SummernoteModelAdmin
 
 STATUS = ((0, "Draft"), (1, "Published"))
 

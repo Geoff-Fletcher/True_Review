@@ -1,10 +1,12 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from .models import MovieReview, TVReview, GameReview, CommonReviewData
 from .forms import MovieReviewForm
 
 
 def review_detail(request, review_id):
+    # allow user to see an individual reviews contents when they click on it
     requested_review = get_object_or_404(CommonReviewData, id=review_id)
     print('review == ', requested_review)
 
@@ -47,9 +49,14 @@ def index(request):
     return render(request, 'review/index.html', context)
 
 def create_movie_review(request):
+    # creates template for viewer to add their own editable movie review to the site
     if request.method == "POST":
         movie_review_form = MovieReviewForm(request.POST)
-    else: # for the GET request (i.e. user types url into browser or clicks a link)
+        if movie_review_form.is_valid():
+           movie_review_form.save()
+           messages.success(request, "Review created successfully!")
+        return redirect('index')
+    else: #the GET request (i.e. user types url into browser or clicks a link)
         movie_review_form = MovieReviewForm()
 
         context = {
