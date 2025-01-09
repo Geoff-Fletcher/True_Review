@@ -31,16 +31,17 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'index' %}">
                 <span class="brand">T<span class="red-o">r</span>ue<span class="thin">|Review</span></span>
             </a>
+            <!-- Burger icon -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Navbar items -->
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -49,7 +50,7 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="#">About</a>
                     </li>
-
+    
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
@@ -62,7 +63,7 @@
                         <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-
+    
                 </ul>                
             </div>
         </div>
