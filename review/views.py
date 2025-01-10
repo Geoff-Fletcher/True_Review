@@ -3,14 +3,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from.models import MovieReview, TVReview, GameReview, CommonReviewData, Comment
-from.forms import MovieReviewForm, CommentForm
+from .models import MovieReview, TVReview, GameReview, \
+    CommonReviewData, Comment
+from .forms import MovieReviewForm, CommentForm
 from django.db.models import F
 
 
 def review_detail(request, review_id):
     # allow user to see an individual reviews contents when they click on it
-    requested_review = get_object_or_404(CommonReviewData, id = review_id)
+    requested_review = get_object_or_404(CommonReviewData, id=review_id)
     print('review == ', requested_review)
 
     comment_form = CommentForm()
@@ -27,9 +28,9 @@ def review_detail(request, review_id):
             comment.requested_review = requested_review
             comment.save()
             messages.add_message(
-            request, messages.SUCCESS,
-            'Comment submitted and awaiting approval'
-    )
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
+            )
 
     context = {
         "review": requested_review,
