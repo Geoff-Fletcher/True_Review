@@ -15,13 +15,27 @@ def review_detail(request, review_id):
 
     comment_form = CommentForm()
 
-   # comments = movie_review.comments.all().order_by("-created_on")
-   # comment_count = movie_review.comments.filter(approved=True).count()
+    comments = requested_review.comments.all().order_by("-created_on")
+    comment_count = requested_review.comments.filter(approved=True).count()
+
+    if request.method == "POST":
+        print("Received a POST request")
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.requested_review = requested_review
+            comment.save()
+            messages.add_message(
+            request, messages.SUCCESS,
+            'Comment submitted and awaiting approval'
+    )
 
     context = {
         "review": requested_review,
         "comment_form": comment_form,
-        # "comments": comments
+        "comment_count": comment_count,
+        "comments": comments
     }
 
     return render(request, 'review/review_detail.html', context)

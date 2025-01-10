@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=30)
@@ -15,11 +16,13 @@ class Category(models.Model):
 
     @staticmethod
     def film_category():
-        return Category.objects.get_or_create(name="Film", defaults={"description": "Film category"})[0]
+        return Category.objects.get_or_create(name="Film",
+               defaults={"description": "Film category"})[0]
 
     @staticmethod
     def tv_category():
-        return Category.objects.get_or_create(name="TV Series", defaults={"description": "TV Series category"})[0]
+        return Category.objects.get_or_create(name="TV Series",
+         defaults={"description": "TV Series category"})[0]
 
     @staticmethod
     def game_category():
