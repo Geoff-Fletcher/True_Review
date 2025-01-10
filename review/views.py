@@ -70,6 +70,28 @@ def create_movie_review(request):
     return render(request, 'review/create_moviereview.html', context)
 
 
+def edit_movie_review(request, movie_review_id):
+    movie_review = get_object_or_404(MovieReview, id=movie_review_id)
+    # creates template for viewer to add their own editable movie review to the site
+    if request.method == "POST":
+        movie_review_form = MovieReviewForm(request.POST, instance=movie_review)
+        if movie_review_form.is_valid():
+            movie_review = movie_review_form.save(commit=False)
+            movie_review.author = request.user
+            movie_review_form.save()
+            messages.success(request, "Review updated successfully!")
+        else:
+            print(movie_review_form.errors)
+        return redirect('index')
+    else: 
+         movie_review_form = MovieReviewForm(instance=movie_review)
+
+    context = {
+    "form": movie_review_form,
+    }
+    return render(request, 'review/edit_moviereview.html', context)
+
+
 
 
 def comment_edit(request, slug, comment_id):
