@@ -61,19 +61,20 @@ def index(request):
 
 @login_required
 def create_movie_review(request):
-    # creates template for viewer to add their own editable movie review to the site
     if request.method == "POST":
         movie_review_form = MovieReviewForm(request.POST)
         if movie_review_form.is_valid():
             movie_review = movie_review_form.save(commit=False)
             movie_review.author = request.user
-            movie_review_form.save()
+            movie_review.save()
             messages.success(request, "Review created successfully!")
-        else:
-              movie_review_form = MovieReviewForm()
+            return redirect('index')  # Redirect to another page after successful creation
+    else:
+        # Initialize an empty form for GET requests
+        movie_review_form = MovieReviewForm()
 
     context = {
-    "form": movie_review_form,
+        "form": movie_review_form,
     }
 
     return render(request, 'review/create_moviereview.html', context)
