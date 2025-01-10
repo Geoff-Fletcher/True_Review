@@ -40,6 +40,7 @@ body {
 
 .review-card {
     background: #fff;
+    color: #000000;
 }
 
 .image-container {
@@ -196,4 +197,12 @@ body {
 .nav-link.active {
     font-weight: bold; /* Bold text for the active state */
     color: #CBA17B; /* Matches the hover color */
+}
+
+.navbar-toggler-icon {
+    background-color: red !important;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-color: blue !important;
 }
