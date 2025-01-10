@@ -1,8 +1,10 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from.models import MovieReview, TVReview, GameReview, CommonReviewData
+from django.http import HttpResponseRedirect
+from.models import MovieReview, TVReview, GameReview, CommonReviewData, Comment
 from.forms import MovieReviewForm, CommentForm
+from django.db.models import F
 
 
 def review_detail(request, review_id):
@@ -10,8 +12,15 @@ def review_detail(request, review_id):
     requested_review = get_object_or_404(CommonReviewData, id = review_id)
     print('review == ', requested_review)
 
+    comment_form = CommentForm()
+
+   # comments = movie_review.comments.all().order_by("-created_on")
+   # comment_count = movie_review.comments.filter(approved=True).count()
+
     context = {
         "review": requested_review,
+        "comment_form": comment_form,
+        # "comments": comments
     }
 
     return render(request, 'review/review_detail.html', context)
@@ -21,13 +30,13 @@ def index(request):
     movie_reviews = MovieReview.objects.filter(status = 1).values(
     'id', 'title', 'author', 'slug', 'featured_image', 'rating',
     'release_date', 'created_on', 'category'
-    )
+    ).annotate(author_name=F('author__username'))
     tv_reviews = TVReview.objects.filter(status = 1).values(
     'id', 'title', 'author', 'slug', 'featured_image', 'rating', 'release_date', 'created_on', 'category'
-    )
+    ).annotate(author_name=F('author__username'))
     game_reviews = GameReview.objects.filter(status = 1).values(
     'id', 'title', 'author', 'slug', 'featured_image', 'rating', 'release_date', 'created_on', 'category'
-    )
+    ).annotate(author_name=F('author__username'))
 
 # Combine all reviews and sort by creation date
     reviews = sorted(
@@ -46,6 +55,7 @@ def index(request):
         'page_obj': page_obj,
         'is_paginated': page_obj.has_other_pages(),
     }
+    print(page_obj)
     return render(request, 'review/index.html', context)
 
 def create_movie_review(request):
@@ -71,6 +81,8 @@ def create_movie_review(request):
 
 
 def edit_movie_review(request, movie_review_id):
+    print(movie_review_id)
+    print(type(movie_review_id))
     movie_review = get_object_or_404(MovieReview, id=movie_review_id)
     # creates template for viewer to add their own editable movie review to the site
     if request.method == "POST":
@@ -90,6 +102,17 @@ def edit_movie_review(request, movie_review_id):
     "form": movie_review_form,
     }
     return render(request, 'review/edit_moviereview.html', context)
+
+
+    def delete_article(request, movie_review_id):
+        movie_review = get_object_or_404(MovieReview, id=movie_review_id)
+
+    if request.method == "POST":
+        movie_review.delete()
+        messages.success(request, "Review deleted successfully!")
+        return redirect('home')
+    else:
+        return render(request, 'review/delete_moviereview.html')
 
 
 
