@@ -31,6 +31,7 @@
                 <p class="card-text">
                     {{ review.review_text | safe }}
                 </p>
+                <a href="{%url 'edit_moviereview' 'movie_review.id' %}" class ="btn btn-secondary">Edit</a>
             </div>
         </div>
     </div>
