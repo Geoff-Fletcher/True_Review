@@ -10,7 +10,7 @@
                 <h1 class="post-title">{{ review.title }}</h1>
                 <!-- Review author goes before the | the review's created date goes after -->
                 <p class="review-subtitle">{{ review.author }} | {{ review.created_on }}</p>
-                <p class="review-subtitle">{{ review.author }} | {{ review.created_on }}</p>
+                <p class="review-subtitle">{{ movie_review.runtime }} | {{ movie_review.director }}</p>
 
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
@@ -34,6 +34,7 @@
                     {{ review.review_text | safe }}
                 </p>
                 <a href="{% url 'edit_moviereview' review.id %}" class ="btn btn-secondary">Edit</a>
+                <a href="{% url 'delete_moviereview' review.id %}" class ="btn btn-primary">Delete</a>
             </div>
         </div>
     </div>

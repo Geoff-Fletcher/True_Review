@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from.models import MovieReview, TVReview, GameReview, CommonReviewData, Comment
 from.forms import MovieReviewForm, CommentForm
@@ -58,6 +59,7 @@ def index(request):
     print(page_obj)
     return render(request, 'review/index.html', context)
 
+@login_required
 def create_movie_review(request):
     # creates template for viewer to add their own editable movie review to the site
     if request.method == "POST":
@@ -68,10 +70,7 @@ def create_movie_review(request):
             movie_review_form.save()
             messages.success(request, "Review created successfully!")
         else:
-            print(movie_review_form.errors)
-        return redirect('index')
-    else: 
-         movie_review_form = MovieReviewForm()
+              movie_review_form = MovieReviewForm()
 
     context = {
     "form": movie_review_form,
@@ -80,11 +79,17 @@ def create_movie_review(request):
     return render(request, 'review/create_moviereview.html', context)
 
 
+@login_required
 def edit_movie_review(request, movie_review_id):
     print(movie_review_id)
     print(type(movie_review_id))
     movie_review = get_object_or_404(MovieReview, id=movie_review_id)
     # creates template for viewer to add their own editable movie review to the site
+
+    if movie_review.author != request.user:
+        messages.error(request, "You can only edit your own reviews.")
+        return redirect('index')
+
     if request.method == "POST":
         movie_review_form = MovieReviewForm(request.POST, instance=movie_review)
         if movie_review_form.is_valid():
@@ -104,8 +109,13 @@ def edit_movie_review(request, movie_review_id):
     return render(request, 'review/edit_moviereview.html', context)
 
 
-    def delete_article(request, movie_review_id):
-        movie_review = get_object_or_404(MovieReview, id=movie_review_id)
+@login_required
+def delete_movie_review(request, movie_review_id):
+    movie_review = get_object_or_404(MovieReview, id=movie_review_id)
+
+    if movie_review.author != request.user:
+        messages.error(request, "You can only edit your own reviews.")
+        return redirect('index')
 
     if request.method == "POST":
         movie_review.delete()
@@ -116,7 +126,7 @@ def edit_movie_review(request, movie_review_id):
 
 
 
-
+@login_required
 def comment_edit(request, slug, comment_id):
   
       # Fetch the corresponding CommonReviewData post
@@ -151,7 +161,7 @@ def comment_edit(request, slug, comment_id):
     # If not a POST request, render the page as usual (optional)
     return redirect('some_view_name', slug=slug)
 
-
+@login_required
 def comment_delete(request, slug, comment_id):
     
     # Fetch the corresponding CommonReviewData post
