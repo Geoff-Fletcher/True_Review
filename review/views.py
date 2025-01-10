@@ -121,7 +121,7 @@ def delete_movie_review(request, movie_review_id):
     if request.method == "POST":
         movie_review.delete()
         messages.success(request, "Review deleted successfully!")
-        return redirect('home')
+        return redirect('index')
     else:
         return render(request, 'review/delete_moviereview.html')
 
