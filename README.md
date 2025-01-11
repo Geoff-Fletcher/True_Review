@@ -154,4 +154,5 @@ My user stories were given priority labels according to the moscow prioritisatio
 
 ![Index page wireframe](https://github.com/user-attachments/assets/fe390697-6c9d-41dd-b81c-d76ad3c8272c)
 
+![Index page ipad](https://github.com/user-attachments/assets/5aa0462d-7096-43bd-8973-d9fd6e8b7c88)
 
