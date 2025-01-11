@@ -2,11 +2,13 @@
 
 (Developer: Geoff Fletcher)
 
-am i responsive placeholder
+![True Review am i responive](https://github.com/user-attachments/assets/d282bf00-17f1-4985-b918-d006d3069564)
+
 
 ## Live website
 
-Link to live website:
+Link to live website:[True Review](https://true-review-86503744e159.herokuapp.com)
+
 ## Why True Review?
 
 The trust people have in review aggregator websites such as Rotten Tomatoes and IGN is at an all time low often with huge disparity between critic and audience scores. There are a multitude of reasons this is the case but what I believe is important is that a huge audience exists for media reviews that put content and the genuine attempt to analyse content first. True Review is built to step into this void as a platform for users to firstly read great reviews but also to create their own and comment on others. There are of course still ratings for the user to glean at a glance a rough idea on someones opinion of a piece of media but our ethos via moderation is to focus on the critque of storytelling, direction, cinematography and the acting performances that have made people fall in love with film, tv-series and video-games for generations. This is a full stack website built using the Django web framwork, with the aim of drawing in readers to enjoy great content and to go on to produce their own reviews that can inspire others and continue growing this platform. The initial idea was to use one model with three seperate "modules" to produce the three review types each with some unique fields: movie reviews, tv reviews and game reviews, but due to time constraints it has been initially launched with movie reviews active and the intent to add functionality for the other two soon.
