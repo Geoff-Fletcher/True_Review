@@ -73,9 +73,28 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
 
 ### Key project goals
 
+- Offer an atractive and accessible platform to read great media reviews
+- Encourage readers to contribute to content themselves first in the form of interesting/ constructive insights via comments then in the form of their own reviews
+- Build a platform that has the potential to keep users coming back for content that inspires them and cascades this enthusiasm into more great content and the potential to create a community that could continually grow.
+
 ### Target audience
 
+- Users that are interested in Films, Tv shows and Video games.
+- Users that enjoy intellectually genuine criticque and are pationate about media.
+- User that enjoy writing reviews and want a good looking easy to work with platform to deploy their work and increase its reach.
+
 ### User requirements and expectations
+
+- An intuitively structured and visually appealing website that is easy to read on all screen sizes
+- Navigation that is easy to use and understand whether using mobile, tablet or monitor
+- Ability to quickly understand the purpose of the website
+- An ability to register, login and logout
+- An ability to interact with content by commenting
+- An ability to read comments that have been made under reviews
+- An ability to update and delete comments
+- An ability to create a review and see it published
+- An ability for the user to update and delete their reviews
+- An accessible website for all users
 
 ### Epics and user stories
 
