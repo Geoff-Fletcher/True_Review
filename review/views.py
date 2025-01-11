@@ -172,10 +172,10 @@ def comment_edit(request, slug, comment_id):
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
         # Redirect back to the same page or slug URL
-        return HttpResponseRedirect(reverse('some_view_name', args=[slug]))
+        return HttpResponseRedirect(reverse('index', args=[slug]))
 
     # If not a POST request, render the page as usual (optional)
-    return redirect('some_view_name', slug=slug)
+    return redirect('index', slug=slug)
 
 @login_required
 def comment_delete(request, slug, comment_id):
@@ -195,7 +195,7 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     # Redirect back to the same page or slug URL
-    return HttpResponseRedirect(reverse('some_view_name', args=[slug]))
+    return HttpResponseRedirect(reverse('index', args=[slug]))
 
 # Create your views here.
 
