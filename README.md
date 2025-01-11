@@ -148,3 +148,10 @@ My user stories were given priority labels according to the moscow prioritisatio
 8. As a site admin I can update the about text so that the user can understand what the site is doing and where it 
    is headed
 
+## Wireframes
+
+### Index page wireframes
+
+![Index page wireframe](https://github.com/user-attachments/assets/fe390697-6c9d-41dd-b81c-d76ad3c8272c)
+
+
