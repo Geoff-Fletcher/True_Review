@@ -18,8 +18,6 @@ if os.path.isfile("env.py"):
     import env
 
 
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -35,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', '8000-geofffletche-truereview-6klku1vvrwi.ws.codeinstitute-ide.net',
-'.herokuapp.com',
+                 '.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-geofffletche-truereview-6klku1vvrwi.ws.codeinstitute-ide.net']
@@ -89,8 +87,8 @@ ROOT_URLCONF = 'true_review.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],  # No need for any global templates directory, so leave it empty
-        'APP_DIRS': True,  # Ensures Django will look for templates in your app's templates folder
+        'DIRS': [TEMPLATES_DIR], 
+        'APP_DIRS': True,  # Django will look in your app's templates folder
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
