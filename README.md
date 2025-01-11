@@ -44,11 +44,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
   - [Wireframes](#wireframes)
    * [Index page wireframes](#index-page-wireframes)
    * [About page wireframes](#about-page-wireframes)
-   * [Create Review page wireframes](#create-review-page-wireframes)
-   * [Review detail page](#review-detail-page)
-   * [Register page](#register-page)
-   * [Log in page](#log-in-page)
-   * [Log out page](#log-out-page)
+   * [Create Review page wireframes](#create-review-page-wireframes)  
 - [Database schema](#database-schema)
    * [Entity relationship diagram](#entity-relationship-diagram)
    * [Entity relationship tables](#entity-relationship-tables)
@@ -152,7 +148,19 @@ My user stories were given priority labels according to the moscow prioritisatio
 
 ### Index page wireframes
 
+Monitor wire frame for main page shown with full header menu on display and 6 reviews paginated to fill one page
+
 ![Index page wireframe](https://github.com/user-attachments/assets/fe390697-6c9d-41dd-b81c-d76ad3c8272c)
 
+Tablet view shown; as the page shrinks it will move from a 3x2 format of pagination to a 1x3 with the full header menu of pages being replaced with the collapsable burger icon that will expand to show these menu options as a dropdown when moused over. The header uses the same responsive styling on all pages of the project including the full review details, about and create pages.
+
 ![Index page ipad](https://github.com/user-attachments/assets/5aa0462d-7096-43bd-8973-d9fd6e8b7c88)
+
+### About page wireframes
+
+### Create Review page wireframes
+
+
+
+
 
