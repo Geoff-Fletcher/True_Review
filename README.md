@@ -2,14 +2,16 @@
 
 (Developer: Geoff Fletcher)
 
-am i responsive placeholder
+![True Review am i responive](https://github.com/user-attachments/assets/d282bf00-17f1-4985-b918-d006d3069564)
+
 
 ## Live website
 
-Link to live website:
+Link to live website:[True Review](https://true-review-86503744e159.herokuapp.com)
+
 ## Why True Review?
 
-The trust people have in review aggregator websites such as Rotten Tomatoes and IGN is at an all time low often with huge disparity between critic and audience scores. There are a multitude of reasons this is the case but what I believe is important is that a huge audience exists for media reviews that put content and the genuine attempt to analyse content first. True Review is built to step into this void as a platform for users to firstly read great reviews but also to create their own and comment on others. There are of course still ratings for the user to glean at a glance a rough idea on someones opinion of a piece of media but our ethos via moderation is to focus on the critque of storytelling, direction, cinematography and the acting performances that have made people fall in love with film, tv-series and video-games for generations. This is a full stack website built using the Django web framwork, with the aim of drawing in readers to enjoy great content and to go on to produce their own reviews that can inspire others and continue growing this platform. The initial idea was to use one model with 3 seperate modules to produce the three review types each with some unique fields: movie reviews, tv reviews and game reviews, but due to time constraints it has been initially launched with movie reviews active and the intent to add the other 2 soon.
+The trust people have in review aggregator websites such as Rotten Tomatoes and IGN is at an all time low often with huge disparity between critic and audience scores. There are a multitude of reasons this is the case but what I believe is important is that a huge audience exists for media reviews that put content and the genuine attempt to analyse content first. True Review is built to step into this void as a platform for users to firstly read great reviews but also to create their own and comment on others. There are of course still ratings for the user to glean at a glance a rough idea on someones opinion of a piece of media but our ethos via moderation is to focus on the critque of storytelling, direction, cinematography and the acting performances that have made people fall in love with film, tv-series and video-games for generations. This is a full stack website built using the Django web framwork, with the aim of drawing in readers to enjoy great content and to go on to produce their own reviews that can inspire others and continue growing this platform. The initial idea was to use one model with three seperate "modules" to produce the three review types each with some unique fields: movie reviews, tv reviews and game reviews, but due to time constraints it has been initially launched with movie reviews active and the intent to add functionality for the other two soon.
 
 
 - [User experience (UX)](#user-experience-ux)
@@ -17,10 +19,16 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [Target audience](#target-audience)
    * [User requirements and expectations](#user-requirements-and-expectations)
    * [Design inspiration](#design-inspiration)
-   * [Colour Scheme](#color-scheme)
+   * [Colour Scheme](#colour-scheme)
 - [Epics and user stories](#epics-and-user-stories)
    * [Epics](#epics)
    * [User stories](#user-stories)
+   * [Agile Methodologies](#agile-methodologies)
+   * [MoSCoW Prioritization](#MoSCoW-Prioritization)
+ - [Wireframes](#wireframes)
+   * [Index page wireframes](#index-page-wireframes)
+   * [About page wireframes](#about-page-wireframes)
+   * [Create Review page wireframes](#create-review-page-wireframes)
 - [Features](#features)
    * [Logo and navigation bar](#logo-and-navigation-bar)
      * [Django alert messages](#django-alert-messages)
@@ -38,16 +46,8 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [View comments on reviews](#view-comments-on-reviews)
    * [CRUD functionality on comments when logged in](#crud-functionality-on-comments-when-logged-in)
    * [Footer](#footer)   
-     * [MoSCoW](#moscow)
-- [Future features](#future-features)
-  - [Wireframes](#wireframes)
-   * [Index page wireframes](#index-page-wireframes)
-   * [About page wireframes](#about-page-wireframes)
-   * [Create Review page wireframes](#create-review-page-wireframes)
-   * [Review detail page](#review-detail-page)
-   * [Register page](#register-page)
-   * [Log in page](#log-in-page)
-   * [Log out page](#log-out-page)
+    - [Future features](#future-features)
+    
 - [Database schema](#database-schema)
    * [Entity relationship diagram](#entity-relationship-diagram)
    * [Entity relationship tables](#entity-relationship-tables)
@@ -104,11 +104,70 @@ My design ideas came from the classic color and aesthetic of old glamorous Holly
 
 The contrast colour scheme is designed to make it easy for users to navigate and draw the eye round each page as well as be evocatove as mentioned above.
 
-I used Coolors
+I used Coolors [https://coolors.co/000000-f39c12-cba17b-e81010-445261](https://coolors.co/000000-f39c12-cba17b-e81010-445261)) to generate the colour palette for this website.
 
-### Epics and user stories
+
+![Coolors](https://github.com/user-attachments/assets/4ce22a1e-0326-4b6a-b171-ceee7d981a39)
+
+### Agile Methodologies - Project Management
+I used an agile approach to project management. The True Review development process was divided into user stories shown below which were added to the GitHub project board to be tracked and managed as issues.
+
+### MoSCoW Prioritization
+
+My user stories were given priority labels according to the moscow prioritisation system alongside labels indicating my percieved size of the task as I started the project. All my user stories with full labelling and acceptance criteria can be found on my project board [https://github.com/users/Geoff-Fletcher/projects/6](https://github.com/users/Geoff-Fletcher/projects/6)
+
+- **Must-Haves:** View Paginated list of reviews, See full review on click, Crud functionality for the review   
+   model, Draft posts, Register an account, Review views and template 
+- **Should-Haves:** Comment Approval, Comment form threads, CRUD functionality for comments.
+- **Could-Haves:** About page, update about
+- **Won’t-Haves:** Review types for games and tv shows
+
+## Epics and user stories
 
 ### Epics
+1.  As a user I can view a paginated list of reviews so that I can easily parse and select what I want to read about
+2.  As a user I can see read and click through reviews on movies ** so that ** I can checkout ones I am interested 
+    in
+3.  As a User I can create, read, update and delete reviews so that I can take part in the websites primary purpose
 
 ### User stories
+
+1. As a user I can View a full review when I click on its preview so that ** I can easily access the content that 
+   interests me**
+2. As a site admin I can draft a review so that I can finish writing content later and am not obliged to complete 
+   in one go.
+3. As a user I can register an account so that ** I can leave comments on reviews**
+4. As a user I can see a burger icon that expands into the navbar on smaller screens so that I can navigate the 
+   site on all screen sizes
+5. As a site admin I can approve or disapprove comments so that *I can filter out objectionable or inappropriate 
+   comments
+6. As a user I can understand the purpose and mission of the website easily so that I stay interested and become 
+   inspired to contribute the kind of content that will build towards the websites mission
+7. As a user I can leave comments on a review so that I can be part of an ongoing conversation
+8. As a site admin I can update the about text so that the user can understand what the site is doing and where it 
+   is headed
+
+## Wireframes
+
+### Index page wireframes
+
+Monitor wire frame for main page shown with full header menu on display and 6 reviews paginated to fill one page
+
+![Index page wireframe](https://github.com/user-attachments/assets/fe390697-6c9d-41dd-b81c-d76ad3c8272c)
+
+Tablet view shown; as the page shrinks it will move from a 3x2 format of pagination to a 1x3 with the full header menu of pages being replaced with the collapsable burger icon that will expand to show these menu options as a dropdown when moused over. The header uses the same responsive styling on all pages of the project including the full review details, about and create pages.
+
+![Index page ipad](https://github.com/user-attachments/assets/5aa0462d-7096-43bd-8973-d9fd6e8b7c88)
+
+### About page wireframes
+
+### Create Review page wireframes
+
+## Features
+
+Many of the features are already shown in the wireframes so for brevity where relevant I will refer to them there whilst providing a commentary on their function
+
+
+
+
 
