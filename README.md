@@ -10,66 +10,59 @@ Link to live website:
 ## Why True Review?
 
 
-## Table of contents ##
-- User experience (UX)
-- Key project goals
-- Target audience
-- User requirements and expectations
-- Epics and user stories
-- Epics
-- User stories
-- Features
-- Logo and navigation bar
-- Hero image
-- Django alert messages
-- Clear indication as to whether the user is logged in or out at all times
-- Call to action button
-- A list of review posts
-- See an individual review post in detail
-- Pagination
-- About page
-- Collaboration request form
-- Sign in form
-- Register form (Sign up)
-- Sign out page
-- Form with CRUD functionality to add a review when logged in
-- View the reviews I have written when I am logged in
-- Edit the reviews I have written when I am logged in
-- Delete the reviews I have written when I am logged in
-- View comments on posts
-- CRUD functionality on comments when logged in
-- Footer
-- Custom 404 page
-- Custom 403 page
-- MoSCoW
-- Future features
-- Design
-- Color
-- Wireframes
-- Index page wireframes
-- About page wireframes
-- Review post detail page
-- Register page
-- Log in page
-- Log out page
-- Database schema
-- Entity relationship diagram
-- Entity relationship tables
-- Technology used
-- Languages and framework
-- Database
-- Technologies and tools
-- Testing
-- Fixed bugs
-- Unfixed bugs
-- Supported screens and browsers
-- Deployment
-- Pre deployment
-- Deploying with heroku
-- Fork this repository:
-- Clone this repository:
-- Credits
-- Code
-- Media
-- Inspiration from real world review sites
-Acknowledgements
+- [User experience (UX)](#user-experience-ux)
+   * [Key project goals](#key-project-goals)
+   * [Target audience](#target-audience)
+   * [User requirements and expectations](#user-requirements-and-expectations)
+- [Epics and user stories](#epics-and-user-stories)
+   * [Epics](#epics)
+   * [User stories](#user-stories)
+- [Features](#features)
+   * [Logo and navigation bar](#logo-and-navigation-bar)
+     * [Django alert messages](#django-alert-messages)
+   * [Clear indication as to whether the user is logged in or out at all times](#clear-indication-as-to-whether-the-user-is-logged-in-or-out-at-all-times)
+    * [A list of review posts](#a-list-of-blog-posts)
+   * [See an individual review post in detail](#see-an-individual-blog-post-in-detail)
+   * [Pagination](#pagination)
+   * [About page](#about-page)
+    * [Sign in form](#sign-in-form)
+   * [Register form (Sign up)](#register-form-sign-up)
+   * [Sign out page](#sign-out-page)
+     * [Form with CRUD functionality to create a review when logged in](#form-with-crud-functionality-to-make-a-review-when-logged-in)
+      * [Edit the reviews I have made when I am logged in](#edit-the-reviews-i-have-made-when-i-am-logged-in)
+   * [Delete the reviews I have made when I am logged in](#delete-the-reviews-i-have-made-when-i-am-logged-in)
+   * [View comments on reviews](#view-comments-on-reviews)
+   * [CRUD functionality on comments when logged in](#crud-functionality-on-comments-when-logged-in)
+   * [Footer](#footer)   
+     * [MoSCoW](#moscow)
+- [Future features](#future-features)
+- [Design](#design)
+   * [Color](#color)
+- [Wireframes](#wireframes)
+   * [Index page wireframes](#index-page-wireframes)
+   * [About page wireframes](#about-page-wireframes)
+   * [Create Review page wireframes](#create-review-page-wireframes)
+   * [Review detail page](#review-detail-page)
+   * [Register page](#register-page)
+   * [Log in page](#log-in-page)
+   * [Log out page](#log-out-page)
+- [Database schema](#database-schema)
+   * [Entity relationship diagram](#entity-relationship-diagram)
+   * [Entity relationship tables](#entity-relationship-tables)
+- [Technology used](#technology-used)
+   * [Languages and framework](#languages-and-framework)
+   * [Database](#database)
+   * [Technologies and tools](#technologies-and-tools)
+- [Testing](#testing)
+   * [Fixed bugs](#fixed-bugs)
+   * [Unfixed bugs](#unfixed-bugs)
+   * [Supported screens and browsers](#supported-screens-and-browsers)
+- [Deployment](#deployment)
+   * [Pre deployment](#pre-deployment)
+   * [Deploying with heroku](#deploying-with-heroku)
+   * [Fork this repository:](#fork-this-repository)
+   * [Clone this repository:](#clone-this-repository)
+- [Credits](#credits)
+   * [Code](#code)
+   * [Media](#media)
+   - [Acknowledgements](#acknowledgements)
