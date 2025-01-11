@@ -104,7 +104,7 @@ My design ideas came from the classic color and aesthetic of old glamorous Holly
 
 The contrast colour scheme is designed to make it easy for users to navigate and draw the eye round each page as well as be evocatove as mentioned above.
 
-I used Coolors [https://coolors.co/000000-f39c12-cba17b-e81010-445261](https://coolors.co/000000-f39c12-cba17b-e81010-445261) to generate the colour palette for this website.
+I used Coolors [https://coolors.co/1f1f1f-a7a7a7-f05f40-df4929-ebebeb](https://coolors.co/1f1f1f-a7a7a7-f05f40-df4929-ebebeb) to generate the colour palette for this website.
 
 ### Epics and user stories
 
