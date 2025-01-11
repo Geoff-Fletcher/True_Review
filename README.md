@@ -17,7 +17,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [Target audience](#target-audience)
    * [User requirements and expectations](#user-requirements-and-expectations)
    * [Design inspiration](#design-inspiration)
-   * [Colour Scheme](#color-scheme)
+   * [Colour Scheme](#colour-scheme)
 - [Epics and user stories](#epics-and-user-stories)
    * [Epics](#epics)
    * [User stories](#user-stories)
@@ -104,7 +104,7 @@ My design ideas came from the classic color and aesthetic of old glamorous Holly
 
 The contrast colour scheme is designed to make it easy for users to navigate and draw the eye round each page as well as be evocatove as mentioned above.
 
-I used Coolors [https://coolors.co/000000-f39c12-cba17b-e81010-445261] to generate the colour palette for this website.
+I used Coolors [https://coolors.co/000000-f39c12-cba17b-e81010-445261](https://coolors.co/000000-f39c12-cba17b-e81010-445261) to generate the colour palette for this website.
 
 ### Epics and user stories
 
