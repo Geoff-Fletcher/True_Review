@@ -11,7 +11,7 @@ from django.db.models import F
 
 def review_detail(request, review_id):
     # allow user to see an individual reviews contents when they click on it
-    requested_review = get_object_or_404(CommonReviewData, id=review_id)
+    requested_review = get_object_or_404(MovieReview, id=review_id)
     print('review == ', requested_review)
 
     comment_form = CommentForm()
@@ -25,7 +25,7 @@ def review_detail(request, review_id):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.author = request.user
-            comment.requested_review = requested_review
+            comment.post = requested_review
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,

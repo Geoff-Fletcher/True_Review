@@ -9,12 +9,12 @@
                 <!-- Review title goes in these h1 tags -->
                 <h1 class="post-title">{{ review.title }}</h1>
                 <!-- Review author goes before the | the review's created date goes after -->
-                <p class="review-subtitle">{{ review.author }} | {{ review.created_on }}</p>
-                <p class="review-subtitle">{{ movie_review.runtime }} | {{ movie_review.director }}</p>
+                <p class="review-subtitle">&nbsp; Author: {{ review.author }} &nbsp;&nbsp;|&nbsp;&nbsp; Created: {{ review.created_on }}</p>
+                <p class="review-subtitle">&nbsp; Runtime: {{ review.runtime }} &nbsp;&nbsp;|&nbsp;&nbsp Director: {{ review.director }} &nbsp;&nbsp;|&nbsp;&nbsp; Release Date: {{ review.release_date }}</p>
 
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in post.featured_image.url %}
+                {% if "placeholder" in review.featured_image.url %}
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}">
