@@ -106,6 +106,9 @@ The contrast colour scheme is designed to make it easy for users to navigate and
 
 I used Coolors [https://coolors.co/000000-f39c12-cba17b-e81010-445261](https://coolors.co/000000-f39c12-cba17b-e81010-445261)) to generate the colour palette for this website.
 
+
+![Coolors](https://github.com/user-attachments/assets/4ce22a1e-0326-4b6a-b171-ceee7d981a39)
+
 ### Epics and user stories
 
 ### Epics
