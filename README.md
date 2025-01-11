@@ -22,7 +22,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [Epics](#epics)
    * [User stories](#user-stories)
    * [Agile Methodologies](#agile-methodologies)
-   * [MoSCoW](#moscow)  
+   * [MoSCoW](#MosCow)  
 - [Features](#features)
    * [Logo and navigation bar](#logo-and-navigation-bar)
      * [Django alert messages](#django-alert-messages)
