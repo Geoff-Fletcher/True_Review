@@ -21,6 +21,8 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
 - [Epics and user stories](#epics-and-user-stories)
    * [Epics](#epics)
    * [User stories](#user-stories)
+   * [Agile Methodologies](#agile-methodologies)
+   * [MoSCoW](#moscow)  
 - [Features](#features)
    * [Logo and navigation bar](#logo-and-navigation-bar)
      * [Django alert messages](#django-alert-messages)
@@ -38,8 +40,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [View comments on reviews](#view-comments-on-reviews)
    * [CRUD functionality on comments when logged in](#crud-functionality-on-comments-when-logged-in)
    * [Footer](#footer)   
-     * [MoSCoW](#moscow)
-- [Future features](#future-features)
+    - [Future features](#future-features)
   - [Wireframes](#wireframes)
    * [Index page wireframes](#index-page-wireframes)
    * [About page wireframes](#about-page-wireframes)
@@ -109,9 +110,25 @@ I used Coolors [https://coolors.co/000000-f39c12-cba17b-e81010-445261](https://c
 
 ![Coolors](https://github.com/user-attachments/assets/4ce22a1e-0326-4b6a-b171-ceee7d981a39)
 
-### Epics and user stories
+### Agile Methodologies - Project Management
+I used an agile approach to project management. The True Review development process was divided into user stories shown below which were added to the GitHub project board to be tracked and managed as issues.
+
+### MoSCoW Prioritization
+
+My user stories were given priority labels according to the moscow prioritisation system alongside labels indicating my percieved size of the task as I started the project. All my user stories with full labelling and acceptance criteria can be found on my project board [https://github.com/users/Geoff-Fletcher/projects/6](#https://github.com/users/Geoff-Fletcher/projects/6)
+
+- **Must-Haves:** View Paginated list of reviews, See full review on click, Crud functionality for the review   
+   model, Draft posts, Register an account, Review views and template 
+- **Should-Haves:** Comment Approval, Comment form threads, CRUD functionality for comments.
+- **Could-Haves:** About page, update about
+- **Won’t-Haves:** Review types for games and tv shows
+
+## Epics and user stories
 
 ### Epics
+1.  As a user I can view a paginated list of reviews so that I can easily parse and select what I want to read about
+2.  As a user I can see read and click through reviews on movies ** so that ** I can checkout ones I am interested in
+3.  
 
 ### User stories
 
