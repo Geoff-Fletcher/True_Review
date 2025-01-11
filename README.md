@@ -16,6 +16,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [Key project goals](#key-project-goals)
    * [Target audience](#target-audience)
    * [User requirements and expectations](#user-requirements-and-expectations)
+   * [Design inspiration](#design-inspiration)
 - [Epics and user stories](#epics-and-user-stories)
    * [Epics](#epics)
    * [User stories](#user-stories)
@@ -95,6 +96,10 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
 - An ability to create a review and see it published
 - An ability for the user to update and delete their reviews
 - An accessible website for all users
+
+### Design Inspiration
+
+My design ideas came from the classic color and aesthetic of old glamorous Hollywood cinema with rich red and gold embellishing and contrasting a dark background that emulates a cinema screen on which the bright images from each film in the pagniated reviews feel like films playing on that screen. This simple but strong aesthetic evokes a classic era and the traditional values coming from the idea that great art is timeless and therefore by extent is its honest critique. I think many people out there just want honest yet nuanced and detailed opinions free from alterior pretentions (in any direction) and this platform aims to deliver.
 
 ### Epics and user stories
 
