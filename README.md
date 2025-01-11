@@ -127,8 +127,24 @@ My user stories were given priority labels according to the moscow prioritisatio
 
 ### Epics
 1.  As a user I can view a paginated list of reviews so that I can easily parse and select what I want to read about
-2.  As a user I can see read and click through reviews on movies ** so that ** I can checkout ones I am interested in
-3.  
+2.  As a user I can see read and click through reviews on movies ** so that ** I can checkout ones I am interested 
+    in
+3.  As a User I can create, read, update and delete reviews so that I can take part in the websites primary purpose
 
 ### User stories
+
+1. As a user I can View a full review when I click on its preview so that ** I can easily access the content that 
+   interests me**
+2. As a site admin I can draft a review so that I can finish writing content later and am not obliged to complete 
+   in one go.
+3. As a user I can register an account so that ** I can leave comments on reviews**
+4. As a user I can see a burger icon that expands into the navbar on smaller screens so that I can navigate the 
+   site on all screen sizes
+5. As a site admin I can approve or disapprove comments so that *I can filter out objectionable or inappropriate 
+   comments
+6. As a user I can understand the purpose and mission of the website easily so that I stay interested and become 
+   inspired to contribute the kind of content that will build towards the websites mission
+7. As a user I can leave comments on a review so that I can be part of an ongoing conversation
+8. As a site admin I can update the about text so that the user can understand what the site is doing and where it 
+   is headed
 
