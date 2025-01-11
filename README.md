@@ -115,7 +115,7 @@ I used an agile approach to project management. The True Review development proc
 
 ### MoSCoW Prioritization
 
-My user stories were given priority labels according to the moscow prioritisation system alongside labels indicating my percieved size of the task as I started the project. All my user stories with full labelling and acceptance criteria can be found on my project board [https://github.com/users/Geoff-Fletcher/projects/6](#https://github.com/users/Geoff-Fletcher/projects/6)
+My user stories were given priority labels according to the moscow prioritisation system alongside labels indicating my percieved size of the task as I started the project. All my user stories with full labelling and acceptance criteria can be found on my project board [https://github.com/users/Geoff-Fletcher/projects/6](https://github.com/users/Geoff-Fletcher/projects/6)
 
 - **Must-Haves:** View Paginated list of reviews, See full review on click, Crud functionality for the review   
    model, Draft posts, Register an account, Review views and template 
