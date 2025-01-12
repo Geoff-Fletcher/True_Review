@@ -259,6 +259,106 @@ The ERD diagram below show the models in my project and how they inter-relate
 
 ![ERD](https://github.com/user-attachments/assets/07ed6f40-ca09-4630-8780-1ce94d62c0bd)
 
+### Technologies and tools
+
+- [VS Code](https://code.visualstudio.com/ "link to visual studio code webpage") was used as the ide for this whole project
+- [Cloudinary](https://cloudinary.com/ "link to cloudinary homepage") was used to host images
+- [GitHub](https://github.com/ "link to github webpage") was used to store the code files, README files and assets
+- [Git](https://git-scm.com/ "link to official git website") was used as a version control software to commit and push the code to the GitHub repository
+- [Heroku](https://id.heroku.com/login "link to Heroku login") was used to deploy the project
+- [dbdiagram](https://dbdiagram.io/ "link to dbdiagram") was used to make a diagram of the database schema. The diagram was based off erd tables that were documented in excel
+- [Excel](https://microsoft.com/excel "link to official microsoft excel website") was used to created entity relationship tables in preparation for the database schema that was made in dbdiagram
+- [Prettier](https://prettier.io/ "link to official prettier website") was used as the default formatter in Visual Studio Code IDE, for html and css files. The setting 'format on save' was used.
+- [Black Formatter for Python](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter "link to official black formatter website") was used as the default formatter in Visual Studio Code IDE, for python files. The setting 'format on save' was used.
+- [Bootstrap](https://getbootstrap.com/ "link to official bootstrap website") was used to quickly layout, position and size critical website features
+- [Balsamiq](https://balsamiq.com/wireframes/ "link to official balsamiq website") was used in early planning to map out wireframes
+- [Google Fonts](https://fonts.google.com/ "link to official google fonts website") was used to import fonts
+- [Favicon Generator](https://favicon.io/favicon-generator/ "link to official favicon generator website") was used to make an 'S' shaped favicon
+- [Font Awesome](https://fontawesome.com/ "link to official font awesome website") was used for all icons
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/overview/ "Link to official chrome developer tools website") was used for lighthouse testing, debugging and consistently checking responsiveness
+- [W3C Markup Validator](https://validator.w3.org/ "link to official html validator") was used to validate all live html
+- [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/ "link to official css validator") was used to validate CSS code
+- [JS Hint](https://jshint.com/ "link to official javascript validator") was used to validate JavaScript code
+- [Code Institute Python Linter](https://pep8ci.herokuapp.com/ "link to official python validator") was used to validate all python code
+- [Django Summernote](https://pypi.org/project/django-summernote/ "link to official summernote website") was used. This is a rich text editor plugin for Django
+- [Django Crispy Forms](https://pypi.org/project/django-crispy-forms/ "link to official crispy forms website") were used throughout the project to quickly create forms
+- [Chat-GPT](https://chat.openai.com/ "link to chat gpt") was used to create the text blog content. There are 18 blogs published on the Statement Beauty website and for each the following query was written into Chat-GPT: "Write 250 words on "blog title I have chosen" in a positive tone for a beauty blog". The blog text was edited slightly after it was taken from Chat-GPT
+
+## Testing
+
+### Supported screens and browsers
+
+#### Screens
+
+- iPhone SE, 375px wide. Also looks good down to 300px according to devtools
+- iPad Mini, 768px wide
+- Nest Hub Max, 1280px wide
+
+#### Browsers
+
+- Chrome
+- Firefox
+- Safari
+- Edge
+- Opera
+
+## Deployment
+
+All code for this project was written in visual studio integrated development environment. Github was used for version control and the application was deployed to heroku from github.
+
+### Pre deployment
+
+- To ensure successful deployment with heroku, it's good practice to make sure that the requirements.txt file is kept up to date so as that imported python modules are configured correctly.
+- A Procfile is required to allow heroku deployment to be configured to a gunicorn web app.
+- In settings.py configure the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost'], make sure all static files and directories are configured correctly.
+- All environment variables on the env.py which gitignored on the repo must be configured correctly with the database url, cloundinary url and secret key.
+
+### Deploying with heroku
+
+After account setup, the steps were as follows:
+
+- Click the "create new app" button on heroku
+- Create a unique name for the app
+- Select region (Europe was selected for this project)
+- Click "create app"
+- Select the deployment method (github was used for this project)
+- Search for the github repository name (it was statement_beauty for this project)
+- Click connect
+- There is an option to use manual deployment or automatic deployment. Make sure main branch is selected
+- In the settings tab select reveal config vars. Input the required hidden variables
+- Select nodejs and python as the buildpack
+- Deploy
+- After the first deployment you will see a message saying "your app was successfully deployed" and there will be a "view" button to take you to your deployed application
+
+The live link for this project can be found here - [Statement Beauty](https://statement-beauty-ec9472f892b1.herokuapp.com)
+
+### Fork this repository:
+
+- Go to the GitHub repository
+- Click on the Fork button in the upper right-hand corner
+
+### Clone this repository:
+
+- Go to the GitHub repository
+- Click the Code button near the top of the page
+- Select 'HTTPS', 'SSH', or 'Github CLI', depending on how you would like to clone
+- Click the copy button to copy the URL to your clipboard
+- Open Git Bash
+- Change the current working directory to where you want the cloned directory
+- Type git clone and paste the URL ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+- Press enter to create your clone locally
+
+Note: The difference between clone and fork is, you need permissions to push back to the original from a clone, but not a fork because a fork will be completely your own new project.
+
+## Credits
+
+### Code
+
+### Media
+
+## Acknowledgments
+
+
 
 
 
