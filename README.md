@@ -41,7 +41,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
     * [Sign in form](#sign-in-form)
    * [Register form (Sign up)](#register-form-sign-up)
    * [Sign out page](#sign-out-page)
-     * [Form with CRUD functionality to create a review when logged in](#form-with-crud-functionality-to-make-a-review-when-logged-in)
+     * [Form with CRUD functionality to create a review when logged in](#form-with-crud-functionality-to-create-a-review-when-logged-in)
       * [Edit the reviews I have made when I am logged in](#edit-the-reviews-i-have-made-when-i-am-logged-in)
    * [Delete the reviews I have made when I am logged in](#delete-the-reviews-i-have-made-when-i-am-logged-in)
    * [View comments on reviews](#view-comments-on-reviews)
