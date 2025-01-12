@@ -375,7 +375,7 @@ Note: The difference between clone and fork is, you need permissions to push bac
 - **Chatgpt AI**: For images and some coding ideas
 - **Favicon.io**: For Favicon generation.
 - **Google Fonts**: For typography.
-- **Kevin Loughry** - Code Institute: A huge help with developing the ocncept for my 3 part model and then general guidance.
+- **Kevin Loughry** - Code Institute: A huge help with developing the concept for my 3 part model and then general guidance.
 - **John Rearden** - Code Institute: General guidance.
 - **Paul Thomas** - Code Institute: For general guidance.
 - **LMS Walkthrough: I think therefore I blog** - Code Institute: provided strong direction on many concepts in the project. 
