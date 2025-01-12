@@ -276,15 +276,12 @@ The ERD diagram below show the models in my project and how they inter-relate
 
 ### Technologies and tools
 
-- [VS Code](https://code.visualstudio.com/ "link to visual studio code webpage") was used as the ide for this whole project
+- [Gitpod](https://www.gitpod.io/ "link to gitpod website") was used as the ide for this whole project
 - [Cloudinary](https://cloudinary.com/ "link to cloudinary homepage") was used to host images
 - [GitHub](https://github.com/ "link to github webpage") was used to store the code files, README files and assets
 - [Git](https://git-scm.com/ "link to official git website") was used as a version control software to commit and push the code to the GitHub repository
 - [Heroku](https://id.heroku.com/login "link to Heroku login") was used to deploy the project
-- [dbdiagram](https://dbdiagram.io/ "link to dbdiagram") was used to make a diagram of the database schema. The diagram was based off erd tables that were documented in excel
-- [Excel](https://microsoft.com/excel "link to official microsoft excel website") was used to created entity relationship tables in preparation for the database schema that was made in dbdiagram
-- [Prettier](https://prettier.io/ "link to official prettier website") was used as the default formatter in Visual Studio Code IDE, for html and css files. The setting 'format on save' was used.
-- [Black Formatter for Python](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter "link to official black formatter website") was used as the default formatter in Visual Studio Code IDE, for python files. The setting 'format on save' was used.
+- [lucid chart](https://https://www.lucidchart.com/pages/er-diagrams/ "limk to lucidchart website") was used to make a diagram of the database schema.
 - [Bootstrap](https://getbootstrap.com/ "link to official bootstrap website") was used to quickly layout, position and size critical website features
 - [Balsamiq](https://balsamiq.com/wireframes/ "link to official balsamiq website") was used in early planning to map out wireframes
 - [Google Fonts](https://fonts.google.com/ "link to official google fonts website") was used to import fonts
@@ -296,10 +293,18 @@ The ERD diagram below show the models in my project and how they inter-relate
 - [JS Hint](https://jshint.com/ "link to official javascript validator") was used to validate JavaScript code
 - [Code Institute Python Linter](https://pep8ci.herokuapp.com/ "link to official python validator") was used to validate all python code
 - [Django Summernote](https://pypi.org/project/django-summernote/ "link to official summernote website") was used. This is a rich text editor plugin for Django
-- [Django Crispy Forms](https://pypi.org/project/django-crispy-forms/ "link to official crispy forms website") were used throughout the project to quickly create forms
-- [Chat-GPT](https://chat.openai.com/ "link to chat gpt") was used to create the text blog content. There are 18 blogs published on the Statement Beauty website and for each the following query was written into Chat-GPT: "Write 250 words on "blog title I have chosen" in a positive tone for a beauty blog". The blog text was edited slightly after it was taken from Chat-GPT
+- [Chat-GPT](https://chat.openai.com/ "link to chat gpt") was used to create the text review content. There are 7 reviews published on the True Review website and to acheive this I asked chat GPT to justify the score of my choosing using the style of either Jonathan Ross or the Critical Drinker (see if you can spot which is which) since I felt these two would provide a fun contrast.
 
 ## Testing
+
+All code has been validated through:
+- **HTML**: [W3C Markup Validator](https://validator.w3.org/).
+- **CSS**: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+- **Python**: PEP8 validation to ensure code quality.
+
+### Fixed bugs
+
+### Unfixed bugs
 
 ### Supported screens and browsers
 
