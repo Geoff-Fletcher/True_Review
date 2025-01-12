@@ -259,7 +259,7 @@ The ERD diagram below show the models in my project and how they inter-relate
 
 ![ERD](https://github.com/user-attachments/assets/07ed6f40-ca09-4630-8780-1ce94d62c0bd)
 
-### Technologies and tools
+### Technology used
 
 - [VS Code](https://code.visualstudio.com/ "link to visual studio code webpage") was used as the ide for this whole project
 - [Cloudinary](https://cloudinary.com/ "link to cloudinary homepage") was used to host images
