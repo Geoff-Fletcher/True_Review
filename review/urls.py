@@ -10,10 +10,6 @@ urlpatterns = [
     path('review/delete/<int:movie_review_id>',
          views.delete_movie_review, name="delete_moviereview"),
     path('reviews/<review_id>/', views.review_detail, name="review_detail"),
-    path('<slug:slug>/edit_comment/<int:comment_id>',
-         views.comment_edit, name='comment_edit'),
-    path('<slug:slug>/edit_comment/<int:comment_id>/',
-         views.comment_edit, name='comment_edit'),
-    path('<slug:slug>/delete_comment/<int:comment_id>/', 
-         views.comment_delete, name='comment_delete'),
+    path('reviews/<int:review_id>/edit_comment/<int:comment_id>/', views.comment_edit, name='comment_edit'),
+    path('reviews/<int:review_id>/delete_comment/<int:comment_id>/', views.comment_delete, name='comment_delete'),
 ]

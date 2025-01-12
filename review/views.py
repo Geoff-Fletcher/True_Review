@@ -152,10 +152,10 @@ def comment_edit(request, slug, comment_id):
 
     # Fetch the corresponding CommonReviewData post
     queryset = CommonReviewData.objects.filter(status=1)  # published reviews
-    movie_review = get_object_or_404(MovieReview, id=movie_review_id)
+    review = get_object_or_404(MovieReview, id=review_id)
 
     # Fetch the comment by ID
-    comment = get_object_or_404(Comment, pk=comment_id)
+    comment = get_object_or_404(Comment, id=comment_id, review=review)
 
     # Check if the request is a POST
     if request.method == "POST":
@@ -178,10 +178,10 @@ def comment_edit(request, slug, comment_id):
                                  'Error updating comment!')
 
         # Redirect back to the same page or slug URL
-        return HttpResponseRedirect(reverse('index', args=[slug]))
+        return redirect('review_detail', review_id=review.id)
 
     # If not a POST request, render the page as usual (optional)
-    return redirect('index', slug=slug)
+    return render(request, 'review/comment_edit.html', {'review': review, 'comment': comment})
 
 
 @login_required
@@ -189,7 +189,7 @@ def comment_delete(request, slug, comment_id):
     
     # Fetch the corresponding CommonReviewData post
     queryset = CommonReviewData.objects.filter(status=1)  # published reviews
-    review = get_object_or_404(Review, slug=slug)
+    review = get_object_or_404(MovieReview, slug=slug)
 
     # Fetch the comment by ID
     comment = get_object_or_404(Comment, pk=comment_id)

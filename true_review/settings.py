@@ -152,6 +152,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Add cloudinary config due to image links using http instead of https
+cloudinary.config(
+    secure=True,
+)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
