@@ -257,7 +257,8 @@ This includes social media icons and copyright. It could potentially include con
 
 The ERD diagram below show the models in my project and how they inter-relate
 
-[Database ER diagram (crow's foot).pdf](https://github.com/user-attachments/files/18389476/Database.ER.diagram.crow.s.foot.pdf)
+![ERD](https://github.com/user-attachments/assets/07ed6f40-ca09-4630-8780-1ce94d62c0bd)
+
 
 
 
