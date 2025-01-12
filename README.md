@@ -47,12 +47,10 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [View comments on reviews](#view-comments-on-reviews)
    * [CRUD functionality on comments when logged in](#crud-functionality-on-comments-when-logged-in)
    * [Footer](#footer)   
-    - [Future features](#future-features)
-    
+    - [Future features](#future-features)    
 - [Database schema](#database-schema)
    * [Entity relationship diagram](#entity-relationship-diagram)
-   * [Entity relationship tables](#entity-relationship-tables)
-- [Technology used](#technology-used)
+   - [Technology used](#technology-used)
    * [Languages and framework](#languages-and-framework)
    * [Database](#database)
    * [Technologies and tools](#technologies-and-tools)
@@ -252,8 +250,14 @@ This includes social media icons and copyright. It could potentially include con
 - Enabling all three review types since this early version of the project sadly did not have time to inlcude TV reviews and game reviews.
 - A like feature on reviews and a like counter for them to track their popularity and those whom click it potentially like the one for posts on Facebook.
 - A like feature on comments similar to the above.
-- 
 
+## Database schema
+
+### Entity relationship diagram
+
+The ERD diagram below show the models in my project and how they inter-relate
+
+[Database ER diagram (crow's foot).pdf](https://github.com/user-attachments/files/18389476/Database.ER.diagram.crow.s.foot.pdf)
 
 
 
