@@ -210,6 +210,52 @@ For the security forms at the moment I have django generics but I plan to replac
 
 ### Form with CRUD functionality to create a review when logged in
 
+The create a review is impossible to use without having a logged in user account it displays a simple form with the fields shown in the image below:
+
+![Create form](https://github.com/user-attachments/assets/f503f464-27a5-46f0-8bfd-cdf8d0c1172f)
+
+This allows the user to fill out all field needed to create a film review ready to appear on the front-end including choosing an image which will be hosted by Cloudinary. Once this is done the users review will be visible as a draft to the admin which they must decide to publish before it appears in the site index. When the author of a review enters the review detail of a review they have created it is there they will see the edit and delete buttons/functionality if they are logged in. The author of reviews appears on both the index page and in the review detail itself to make it easy to see what a given user has written.
+
+### Edit the reviews I have made when I am logged in
+
+As mentioned above the edit functionality shows in the reviews details page on any review the users has written as long as they are logged in clicking this then feeds them to the edit form which mirrors the create form but allows adjustment of any field before resubmitting, after clicking this the user is returned to the main page and will see a Django alert informing them that the edit was successful.
+
+![Edit form](https://github.com/user-attachments/assets/fb7f6315-7a9c-41b1-b130-9d59d16b9447)
+
+### Delete the reviews I have made when I am logged in
+
+The user can use the delete functionality on any review they have made whilst they are logged in; it checks if they are certain then when they respond 'yes' or 'no' they are returned to the main page with a Django alert that indicates the result of their choice.
+
+![Delete form](https://github.com/user-attachments/assets/856e7d55-7cb0-43a9-b15a-ef2ed2f71a28)
+
+### View comments on reviews
+
+The user can see all the comments on a review in the comment thread text box directly below the review on the review detail page. Comments can be seen regardless of user login status but can only be created, edited and deleted when they are logged in and only if they are that users own comments.
+
+![Comment Crud](https://github.com/user-attachments/assets/d1d95778-138d-4c30-a047-245e32a4d269)
+
+the screen-shot shows the bottom of a review on a phone screen leading to the comments count, comments thread with delete and edit buttons on the users published comments and underneath the Leave a comment (create) box which can be freely typed in before clicking submit to post.
+
+### CRUD functionality on comments when logged in
+
+Full front end CRUD functionality is available on comments if the user is logged in. Every time data is created, edited or deleted there is an appropriate notification from Django alerts to give the user feedback. All this is visible in the above screenshot.
+
+### Footer
+
+This includes social media icons and copyright. It could potentially include contact details for colloboration or dicsussion over moderation in the future.
+
+### Future Features
+
+- A search box to allow users to search for reviews based on specific titles they are interested in.
+- A sort filter for reviews into media type, reviews by author and potentially by genre which will be present for movies, tv shows and games but will take different categories in each case.
+- Email confirmation when a users draft review has been publised.
+- Enabling all three review types since this early version of the project sadly did not have time to inlcude TV reviews and game reviews.
+- A like feature on reviews and a like counter for them to track their popularity and those whom click it potentially like the one for posts on Facebook.
+- A like feature on comments similar to the above.
+- 
+
+
+
 
 
 
