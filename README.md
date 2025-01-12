@@ -290,7 +290,7 @@ The ERD diagram below show the models in my project and how they inter-relate
 
 #### Screens
 
-- iPhone SE, 375px wide. Also looks good down to 300px according to devtools
+- iPhone SE, 375px wide.
 - iPad Mini, 768px wide
 - Nest Hub Max, 1280px wide
 
@@ -300,37 +300,39 @@ The ERD diagram below show the models in my project and how they inter-relate
 - Firefox
 - Safari
 - Edge
-- Opera
 
 ## Deployment
 
-All code for this project was written in visual studio integrated development environment. Github was used for version control and the application was deployed to heroku from github.
+All code for this project was written in Gitpod as the integrated development environment. GitHub was used for version control, and the application was deployed to Heroku from GitHub.
 
 ### Pre deployment
 
-- To ensure successful deployment with heroku, it's good practice to make sure that the requirements.txt file is kept up to date so as that imported python modules are configured correctly.
-- A Procfile is required to allow heroku deployment to be configured to a gunicorn web app.
-- In settings.py configure the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost'], make sure all static files and directories are configured correctly.
-- All environment variables on the env.py which gitignored on the repo must be configured correctly with the database url, cloundinary url and secret key.
+To ensure a successful deployment to Heroku, the following practices are to be followed (Experience from previous Django projects):
+
+- **Requirements File:** The `requirements.txt` file must be kept up to date to ensure all imported Python modules are configured correctly for Heroku.
+- **Procfile:** A `Procfile` was added to configure the application as a Gunicorn web app on Heroku.
+- **Allowed Hosts:** In `settings.py`, the `ALLOWED_HOSTS` list was configured to include the Heroku app name and `localhost`. Example format:
+    ```python
+    ALLOWED_HOSTS = ['your-app-name.herokuapp.com', 'localhost']
+    ```
+- **Environment Variables:** All sensitive data such as the `DATABASE_URL`, `CLOUDINARY_URL`, and `SECRET_KEY` were added to the `.env` file, which is ignored by Git using `.gitignore`. These variables are added to Heroku manually through the Config Vars section.
 
 ### Deploying with heroku
 
-After account setup, the steps were as follows:
+The steps for deploying to Heroku are as follows (Experience from previous Django projects):
 
-- Click the "create new app" button on heroku
-- Create a unique name for the app
-- Select region (Europe was selected for this project)
-- Click "create app"
-- Select the deployment method (github was used for this project)
-- Search for the github repository name (it was statement_beauty for this project)
-- Click connect
-- There is an option to use manual deployment or automatic deployment. Make sure main branch is selected
-- In the settings tab select reveal config vars. Input the required hidden variables
-- Select nodejs and python as the buildpack
-- Deploy
-- After the first deployment you will see a message saying "your app was successfully deployed" and there will be a "view" button to take you to your deployed application
+1. **Create New App:** Log in to your Heroku account and click on the "Create New App" button.
+2. **App Name:** Choose a unique name for your app.
+3. **Select Region:** Choose the appropriate region (Europe was selected for this project).
+4. **Create App:** Click the "Create App" button to proceed.
+5. **Deployment Method:** In the "Deploy" tab, select GitHub as the deployment method.
+6. **Connect to GitHub:** Search for the repository name and click "Connect".
+7. **Manual or Automatic Deployment:** Select either manual or automatic deployment. Ensure the main branch is selected for deployment.
+8. **Config Vars:** In the "Settings" tab, click "Reveal Config Vars" and input the required environment variables.
+9. **Buildpack:** Select Node.js and Python as the buildpacks for your project.
+10. **Deploy:** Once the configuration is complete, click the "Deploy Branch" button. After successful deployment, a "View" button will appear to take you to the live site.
 
-The live link for this project can be found here - [Statement Beauty](https://statement-beauty-ec9472f892b1.herokuapp.com)
+Link to live website:[True Review](https://true-review-86503744e159.herokuapp.com)
 
 ### Fork this repository:
 
@@ -354,9 +356,25 @@ Note: The difference between clone and fork is, you need permissions to push bac
 
 ### Code
 
+- **Django Documentation**: The official docs were invaluable in setting up the project structure and solving specific issues.
+- **Chatgpt AI**: For images and some coding ideas
+- **Favicon.io**: For Favicon generation.
+- **Google Fonts**: For typography.
+- **Kevin Loughry** - Code Institute: A huge help with developing the ocncept for my 3 part model and then general guidance.
+- **John Rearden** - Code Institute: General guidance.
+- **Paul Thomas** - Code Institute: For general guidance.
+- **LMS Walkthrough: I think therefore I blog** - Code Institute: provided strong direction on many concepts in the project. 
+
 ### Media
 
 ## Acknowledgments
+
+I would like to extend my eternal gratitude to the following individuals whose guidance, and inspiration this project would not have been possible without:
+
+- Kevin Loughry
+- John Rearden
+- Paul Thomas
+- My brother Iain Fletcher, and other friends, plus the members of Code Institute sep-2024-wmca-bootcamp-1, who have had to listen to me whine and say stupid stuff often in the same sentance! whilst providing the support I needed not to mention their help in bug testing the site.
 
 
 
