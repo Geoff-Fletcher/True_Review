@@ -259,7 +259,22 @@ The ERD diagram below show the models in my project and how they inter-relate
 
 ![ERD](https://github.com/user-attachments/assets/07ed6f40-ca09-4630-8780-1ce94d62c0bd)
 
-### Technology used
+## Technology used
+
+### Languages and framework
+
+- [HTML5](https://developer.mozilla.org/en-US/docs/Learn/HTML "link to html mozilla documentation")
+  was used to create content and structure
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS "link to css mozilla documentation")
+  was used to add custom styles
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript "link to javascript mozilla documentation") was used to dynamically reset the comment form if the reset button was clicked and to show a modal when the edit comment button was clicked
+- [Django](https://www.djangoproject.com/ "link to django docs homepage") was the python framework used to develop the site
+
+### Database
+
+- [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/ "link to postgresql from code institute") was used as the PostgreSQL database for this project
+
+### Technologies and tools
 
 - [VS Code](https://code.visualstudio.com/ "link to visual studio code webpage") was used as the ide for this whole project
 - [Cloudinary](https://cloudinary.com/ "link to cloudinary homepage") was used to host images
@@ -367,7 +382,7 @@ Note: The difference between clone and fork is, you need permissions to push bac
 
 ### Media
 
-## Acknowledgments
+## Acknowledgements
 
 I would like to extend my eternal gratitude to the following individuals whose guidance, and inspiration this project would not have been possible without:
 
