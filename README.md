@@ -29,7 +29,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
  - [Wireframes](#wireframes)
    * [Index page wireframes](#index-page-wireframes)
    * [About page wireframes](#about-page-wireframes)
-   * [Create Review page wireframes](#create-review-page-wireframes)
+   * [Review Detail page wireframes](#review-detail-page-wireframes)
 - [Features](#features)
    * [Logo and navigation bar](#logo-and-navigation-bar)
      * [Django alert messages](#django-alert-messages)
@@ -160,7 +160,16 @@ Tablet view shown; as the page shrinks it will move from a 3x2 format of paginat
 
 ### About page wireframes
 
-### Create Review page wireframes
+![about wireframe](https://github.com/user-attachments/assets/c7cf82bc-73ed-4ecf-80b9-2b94d76bd57f)
+
+The About page is shown here in phone or small tablet view. Responsiveness on this page extendes to the header and burger icon the same as the home page.
+
+
+### Review Detail page wireframes
+
+![Review Detail wireframe](https://github.com/user-attachments/assets/f762fb37-6cec-47b9-9f52-bacdddbdca09)
+
+Review Detail page shown here from the phone and small tablet view. This not only contains all the review details but as discussed later had edit review buttons for the review and submit, edit and delete button for the comments. The responsiveness on this page will be failry minimal with the same navigation bar changes as the homepage but otherwise just slight widening of review and input boxes below.
 
 ## Features
 
