@@ -29,7 +29,7 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
  - [Wireframes](#wireframes)
    * [Index page wireframes](#index-page-wireframes)
    * [About page wireframes](#about-page-wireframes)
-   * [Create Review page wireframes](#create-review-page-wireframes)
+   * [Review Detail page wireframes](#review-detail-page-wireframes)
 - [Features](#features)
    * [Logo and navigation bar](#logo-and-navigation-bar)
      * [Django alert messages](#django-alert-messages)
@@ -47,12 +47,10 @@ The trust people have in review aggregator websites such as Rotten Tomatoes and 
    * [View comments on reviews](#view-comments-on-reviews)
    * [CRUD functionality on comments when logged in](#crud-functionality-on-comments-when-logged-in)
    * [Footer](#footer)   
-    - [Future features](#future-features)
-    
+    - [Future features](#future-features)    
 - [Database schema](#database-schema)
    * [Entity relationship diagram](#entity-relationship-diagram)
-   * [Entity relationship tables](#entity-relationship-tables)
-- [Technology used](#technology-used)
+   - [Technology used](#technology-used)
    * [Languages and framework](#languages-and-framework)
    * [Database](#database)
    * [Technologies and tools](#technologies-and-tools)
@@ -162,7 +160,16 @@ Tablet view shown; as the page shrinks it will move from a 3x2 format of paginat
 
 ### About page wireframes
 
-### Create Review page wireframes
+![about wireframe](https://github.com/user-attachments/assets/c7cf82bc-73ed-4ecf-80b9-2b94d76bd57f)
+
+The About page is shown here in phone or small tablet view. Responsiveness on this page extendes to the header and burger icon the same as the home page.
+
+
+### Review Detail page wireframes
+
+![Review Detail wireframe](https://github.com/user-attachments/assets/f762fb37-6cec-47b9-9f52-bacdddbdca09)
+
+Review Detail page shown here from the phone and small tablet view. This not only contains all the review details but as discussed later had edit review buttons for the review and submit, edit and delete button for the comments. The responsiveness on this page will be failry minimal with the same navigation bar changes as the homepage but otherwise just slight widening of review and input boxes below.
 
 ## Features
 
@@ -209,6 +216,200 @@ For the security forms at the moment I have django generics but I plan to replac
 For the security forms at the moment I have django generics but I plan to replace the with crispy forms the moment i get time.
 
 ### Form with CRUD functionality to create a review when logged in
+
+The create a review is impossible to use without having a logged in user account it displays a simple form with the fields shown in the image below:
+
+![Create form](https://github.com/user-attachments/assets/f503f464-27a5-46f0-8bfd-cdf8d0c1172f)
+
+This allows the user to fill out all field needed to create a film review ready to appear on the front-end including choosing an image which will be hosted by Cloudinary. Once this is done the users review will be visible as a draft to the admin which they must decide to publish before it appears in the site index. When the author of a review enters the review detail of a review they have created it is there they will see the edit and delete buttons/functionality if they are logged in. The author of reviews appears on both the index page and in the review detail itself to make it easy to see what a given user has written.
+
+### Edit the reviews I have made when I am logged in
+
+As mentioned above the edit functionality shows in the reviews details page on any review the users has written as long as they are logged in clicking this then feeds them to the edit form which mirrors the create form but allows adjustment of any field before resubmitting, after clicking this the user is returned to the main page and will see a Django alert informing them that the edit was successful.
+
+![Edit form](https://github.com/user-attachments/assets/fb7f6315-7a9c-41b1-b130-9d59d16b9447)
+
+### Delete the reviews I have made when I am logged in
+
+The user can use the delete functionality on any review they have made whilst they are logged in; it checks if they are certain then when they respond 'yes' or 'no' they are returned to the main page with a Django alert that indicates the result of their choice.
+
+![Delete form](https://github.com/user-attachments/assets/856e7d55-7cb0-43a9-b15a-ef2ed2f71a28)
+
+### View comments on reviews
+
+The user can see all the comments on a review in the comment thread text box directly below the review on the review detail page. Comments can be seen regardless of user login status but can only be created, edited and deleted when they are logged in and only if they are that users own comments.
+
+![Comment Crud](https://github.com/user-attachments/assets/d1d95778-138d-4c30-a047-245e32a4d269)
+
+the screen-shot shows the bottom of a review on a phone screen leading to the comments count, comments thread with delete and edit buttons on the users published comments and underneath the Leave a comment (create) box which can be freely typed in before clicking submit to post.
+
+### CRUD functionality on comments when logged in
+
+Full front end CRUD functionality is available on comments if the user is logged in. Every time data is created, edited or deleted there is an appropriate notification from Django alerts to give the user feedback. All this is visible in the above screenshot.
+
+### Footer
+
+This includes social media icons and copyright. It could potentially include contact details for colloboration or dicsussion over moderation in the future.
+
+### Future Features
+
+- A search box to allow users to search for reviews based on specific titles they are interested in.
+- A sort filter for reviews into media type, reviews by author and potentially by genre which will be present for movies, tv shows and games but will take different categories in each case.
+- Email confirmation when a users draft review has been publised.
+- Enabling all three review types since this early version of the project sadly did not have time to inlcude TV reviews and game reviews.
+- A like feature on reviews and a like counter for them to track their popularity and those whom click it potentially like the one for posts on Facebook.
+- A like feature on comments similar to the above.
+
+## Database schema
+
+### Entity relationship diagram
+
+The ERD diagram below show the models in my project and how they inter-relate
+
+![ERD](https://github.com/user-attachments/assets/07ed6f40-ca09-4630-8780-1ce94d62c0bd)
+
+## Technology used
+
+### Languages and framework
+
+- [HTML5](https://developer.mozilla.org/en-US/docs/Learn/HTML "link to html mozilla documentation")
+  was used to create content and structure
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS "link to css mozilla documentation")
+  was used to add custom styles
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript "link to javascript mozilla documentation") was used to dynamically reset the comment form if the reset button was clicked and to show a modal when the edit comment button was clicked
+- [Django](https://www.djangoproject.com/ "link to django docs homepage") was the python framework used to develop the site
+
+### Database
+
+- [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/ "link to postgresql from code institute") was used as the PostgreSQL database for this project
+
+### Technologies and tools
+
+- [Gitpod](https://www.gitpod.io/ "link to gitpod website") was used as the ide for this whole project
+- [Cloudinary](https://cloudinary.com/ "link to cloudinary homepage") was used to host images
+- [GitHub](https://github.com/ "link to github webpage") was used to store the code files, README files and assets
+- [Git](https://git-scm.com/ "link to official git website") was used as a version control software to commit and push the code to the GitHub repository
+- [Heroku](https://id.heroku.com/login "link to Heroku login") was used to deploy the project
+- [lucid chart](https://https://www.lucidchart.com/pages/er-diagrams/ "limk to lucidchart website") was used to make a diagram of the database schema.
+- [Bootstrap](https://getbootstrap.com/ "link to official bootstrap website") was used to quickly layout, position and size critical website features
+- [Balsamiq](https://balsamiq.com/wireframes/ "link to official balsamiq website") was used in early planning to map out wireframes
+- [Google Fonts](https://fonts.google.com/ "link to official google fonts website") was used to import fonts
+- [Favicon Generator](https://favicon.io/favicon-generator/ "link to official favicon generator website") was used to make an 'S' shaped favicon
+- [Font Awesome](https://fontawesome.com/ "link to official font awesome website") was used for all icons
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/overview/ "Link to official chrome developer tools website") was used for lighthouse testing, debugging and consistently checking responsiveness
+- [W3C Markup Validator](https://validator.w3.org/ "link to official html validator") was used to validate all live html
+- [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/ "link to official css validator") was used to validate CSS code
+- [JS Hint](https://jshint.com/ "link to official javascript validator") was used to validate JavaScript code
+- [Code Institute Python Linter](https://pep8ci.herokuapp.com/ "link to official python validator") was used to validate all python code
+- [Django Summernote](https://pypi.org/project/django-summernote/ "link to official summernote website") was used. This is a rich text editor plugin for Django
+- [Chat-GPT](https://chat.openai.com/ "link to chat gpt") was used to create the text review content. There are 7 reviews published on the True Review website and to acheive this I asked chat GPT to justify the score of my choosing using the style of either Jonathan Ross or the Critical Drinker (see if you can spot which is which) since I felt these two would provide a fun contrast.
+
+## Testing
+
+All code has been validated through:
+- **HTML**: [W3C Markup Validator](https://validator.w3.org/).
+- **CSS**: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+- **Python**: PEP8 validation to ensure code quality.
+
+### Fixed bugs
+
+### Unfixed bugs
+
+### Supported screens and browsers
+
+#### Screens
+
+- iPhone SE, 375px wide.
+- iPad Mini, 768px wide
+- Nest Hub Max, 1280px wide
+
+#### Browsers
+
+- Chrome
+- Firefox
+- Safari
+- Edge
+
+## Deployment
+
+All code for this project was written in Gitpod as the integrated development environment. GitHub was used for version control, and the application was deployed to Heroku from GitHub.
+
+### Pre deployment
+
+To ensure a successful deployment to Heroku, the following practices are to be followed (Experience from previous Django projects):
+
+- **Requirements File:** The `requirements.txt` file must be kept up to date to ensure all imported Python modules are configured correctly for Heroku.
+- **Procfile:** A `Procfile` was added to configure the application as a Gunicorn web app on Heroku.
+- **Allowed Hosts:** In `settings.py`, the `ALLOWED_HOSTS` list was configured to include the Heroku app name and `localhost`. Example format:
+    ```python
+    ALLOWED_HOSTS = ['your-app-name.herokuapp.com', 'localhost']
+    ```
+- **Environment Variables:** All sensitive data such as the `DATABASE_URL`, `CLOUDINARY_URL`, and `SECRET_KEY` were added to the `.env` file, which is ignored by Git using `.gitignore`. These variables are added to Heroku manually through the Config Vars section.
+
+### Deploying with heroku
+
+The steps for deploying to Heroku are as follows (Experience from previous Django projects):
+
+1. **Create New App:** Log in to your Heroku account and click on the "Create New App" button.
+2. **App Name:** Choose a unique name for your app.
+3. **Select Region:** Choose the appropriate region (Europe was selected for this project).
+4. **Create App:** Click the "Create App" button to proceed.
+5. **Deployment Method:** In the "Deploy" tab, select GitHub as the deployment method.
+6. **Connect to GitHub:** Search for the repository name and click "Connect".
+7. **Manual or Automatic Deployment:** Select either manual or automatic deployment. Ensure the main branch is selected for deployment.
+8. **Config Vars:** In the "Settings" tab, click "Reveal Config Vars" and input the required environment variables.
+9. **Buildpack:** Select Node.js and Python as the buildpacks for your project.
+10. **Deploy:** Once the configuration is complete, click the "Deploy Branch" button. After successful deployment, a "View" button will appear to take you to the live site.
+
+Link to live website:[True Review](https://true-review-86503744e159.herokuapp.com)
+
+### Fork this repository:
+
+- Go to the GitHub repository
+- Click on the Fork button in the upper right-hand corner
+
+### Clone this repository:
+
+- Go to the GitHub repository
+- Click the Code button near the top of the page
+- Select 'HTTPS', 'SSH', or 'Github CLI', depending on how you would like to clone
+- Click the copy button to copy the URL to your clipboard
+- Open Git Bash
+- Change the current working directory to where you want the cloned directory
+- Type git clone and paste the URL ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+- Press enter to create your clone locally
+
+Note: The difference between clone and fork is, you need permissions to push back to the original from a clone, but not a fork because a fork will be completely your own new project.
+
+## Credits
+
+### Code
+
+- **Django Documentation**: The official docs were invaluable in setting up the project structure and solving specific issues.
+- **Chatgpt AI**: For images and some coding ideas
+- **Favicon.io**: For Favicon generation.
+- **Google Fonts**: For typography.
+- **Kevin Loughry** - Code Institute: A huge help with developing the concept for my 3 part model and then general guidance.
+- **John Rearden** - Code Institute: General guidance.
+- **Paul Thomas** - Code Institute: For general guidance.
+- **LMS Walkthrough: I think therefore I blog** - Code Institute: provided strong direction on many concepts in the project. 
+
+### Media
+
+- Film images taken from google search results primarily hollywood reporter and Imdb
+- About image generated on Chat GPT as discussed in technologies and tools
+
+## Acknowledgements
+
+I would like to extend my eternal gratitude to the following individuals whose guidance, and inspiration this project would not have been possible without:
+
+- Kevin Loughry - Many thanks to Kevin who really helped with the conception of my three review type model and helped with a chunk of the implementation when I got stuck. Thanks for your mentorship, encouragement and patience.
+- John Rearden - Thanks to John who helped me countless times when I reached a blockage was stuck and totally confused. Thanks for your patience and inspiration to understand more when I felt it was beyond me.
+- Paul Thomas - Many thanks to Paul who was a great and dedicated tutor. Thanks for your help and encouragement both in the project and the weeks leading up to it.
+- My brother Iain Fletcher, and other friends, plus the members of Code Institute sep-2024-wmca-bootcamp-1, who have had to listen to me whine and say stupid stuff often in the same sentence! whilst providing the support I needed not to mention their help in bug testing the site.
+
+
+
 
 
 
