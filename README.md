@@ -396,14 +396,17 @@ Note: The difference between clone and fork is, you need permissions to push bac
 
 ### Media
 
+- Film images taken from google search results primarily hollywood reporter and Imdb
+- About image generated on Chat GPT as discussed in technologies and tools
+
 ## Acknowledgements
 
 I would like to extend my eternal gratitude to the following individuals whose guidance, and inspiration this project would not have been possible without:
 
-- Kevin Loughry
-- John Rearden
-- Paul Thomas
-- My brother Iain Fletcher, and other friends, plus the members of Code Institute sep-2024-wmca-bootcamp-1, who have had to listen to me whine and say stupid stuff often in the same sentance! whilst providing the support I needed not to mention their help in bug testing the site.
+- Kevin Loughry - Many thanks to Kevin who really helped with the conception of my three review type model and helped with a chunk of the implementation when I got stuck. Thanks for your mentorship, encouragement and patience.
+- John Rearden - Thanks to John who helped me countless times when I reached a blockage was stuck and totally confused. Thanks for your patience and inspiration to understand more when I felt it was beyond me.
+- Paul Thomas - Many thanks to Paul who was a great and dedicated tutor. Thanks for your help and encouragement both in the project and the weeks leading up to it.
+- My brother Iain Fletcher, and other friends, plus the members of Code Institute sep-2024-wmca-bootcamp-1, who have had to listen to me whine and say stupid stuff often in the same sentence! whilst providing the support I needed not to mention their help in bug testing the site.
 
 
 
