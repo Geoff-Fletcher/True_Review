@@ -309,21 +309,47 @@ The ERD diagram below show the models in my project and how they inter-relate
 All code has been validated through:
 - **HTML**: [W3C Markup Validator](https://validator.w3.org/).
 - **CSS**: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
+![style css valid](https://github.com/user-attachments/assets/e8023920-ef25-4383-98d5-d871efa3a6df)
+
+  style.css valid
+  
 - **Python**: PEP8 validation to ensure code quality.
 
 ### Fixed bugs
 
-### Unfixed bugs
+#### bug 1
+
+I had some of my friends sign up for accounts from the front end to manually test the Heroku deployment and had three of them create an account, write edit and delete a few reviews each in order to prove the review CRUD functionality. Results were very positive on review CRUD but revealed that the comments would not let the user submit an error insted throwing up a 404.
+
+#### bug 2
+img was not showing in the review detail screen. found on line 20 of review_detail.html:
+ <img src="{{ review.featured_image.url }}" class="scale" alt="{{ post.title }}"> had to be written in instead of the original that had src={{"post.featured_img.url}} Upon refresh the review image now showed not just on the index page but here under the title banner.
+
+#### bug3
+
+The initial look of the website was inherited from the LMS 'I think therefore I blog' I tried to black out a load of the background in CSS only to find a lot of the text colourings were governed by innate Bootstrap settings. After a really helpful talk with my tutor Paul he advised me there was a Dark mode on Boostrap 5.3 so I replaced my 5.13 version and was able to much more conveniently acheive they look I now have for True Review.
+
+ #### bug 4
+
+I kept getting a  warning message from the console sayin that insecure elements were being requested with http not https referring to the review images hosted and cloudinary, I realised I had seen this issue in a project Readme I had read by K.S. Dunne and followed her soloution to fix it of adding the following line in settings.py :
+cloudinary.config(
+        secure=True,
+)
 
 ### Supported screens and browsers
 
 #### Screens
+
+I tested True Review primarily on the following settings in google chromes dev console:
 
 - iPhone SE, 375px wide.
 - iPad Mini, 768px wide
 - Nest Hub Max, 1280px wide
 
 #### Browsers
+
+I checked out True Reviews Heroku deployment on the following browsers:
 
 - Chrome
 - Firefox
