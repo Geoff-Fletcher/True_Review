@@ -167,6 +167,47 @@ Tablet view shown; as the page shrinks it will move from a 3x2 format of paginat
 
 Many of the features are already shown in the wireframes so for brevity where relevant I will refer to them there whilst providing a commentary on their function
 
+### Logo and navigation bar
+
+A responsive navigation bar is in place. Concentrating on 'mobile first' design, the navigation bar incorporates a clickable burger icon with a drop down menu on mobile. There is a burger icon at tablet size too, but when moving to monitor size the burger disappears and a navigation bar appears with options to navigate to pages; 'Home', 'About' or 'Create' and depending on the user login status also a 'Register' and 'Login' link or a 'Logout'. The nav bar also displays the user login status with the message 'You are not logged in' or 'You are logged in as XXXXX'. In the top left corner there is a clickable project logo that also acts as a 'Home' button. See wireframes and other screenshots to view these features or log in to the project.
+
+### Django alert messages
+
+Every time there is a change in data the user is alerted. For example when a review is created, or edited and the same for comments. Also there is a notification when the user logs in or out to confirm their action. These appear in the blank space in the middle of the navigation bar to be in the users eyeline when possible.
+
+### Clear indication as to whether the user is logged in or out at all times
+
+As mentioned above the nav bar displays user login status with the message 'You are not logged in' or 'You are logged in as XXXXX'
+
+### A list of review posts
+
+On mobile and small Tablet screens reviews are displayed on the home page in a column of 3 as displayed in wireframes above. On larger tablets and monitiors there are 3 review posts displayed in a row and 6 on a page, with the option to use a next and previous button. As monitor size grows the review cards on the home page simply enlarge.
+
+### See an individual review post in detail
+
+When the title of a review is clicked on the home page the review detail html is rendered creating a page that show the image for the review and title above a large text box containg the review itself. Underneath this is a thread of comments and a comment box to allow for submission of the users own comments
+
+### Pagination
+
+This feature forms the list of 1x3 or 3x2 review mentioned in a list of review posts and generates the next and previous buttons dependent on the users position in the content.
+
+### About Page
+
+The about page gives information about True Review's concept and goals moving forward.lt talks about what the website hopes to acheive and how users can contribute. It also lays down some expectations for the user about what will be moderated in the hope that content submission will feel easy and keep the site on the right track. The image I have used is a little abstract but actually used AI to incorporate my facial features as I didn't feel it was crucial to lose privacy by putting my own or anyone elses image in the project but I could of course change this in the future if I felt it was meaningful to take on a more public status. I also felt True Review is not all about me so keeping a more abstract persona made sense.
+
+### Sign in form
+
+For the security forms at the moment I have django generics but I plan to replace the with crispy forms the moment i get time.
+
+### Register form (Sign up)
+
+For the security forms at the moment I have django generics but I plan to replace the with crispy forms the moment i get time.
+
+### Sign out page
+
+For the security forms at the moment I have django generics but I plan to replace the with crispy forms the moment i get time.
+
+### Form with CRUD functionality to create a review when logged in
 
 
 
