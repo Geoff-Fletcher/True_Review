@@ -305,15 +305,18 @@ The ERD diagram below show the models in my project and how they inter-relate
 
 ## Testing
 
+I manually tested all the header elements and then each unique interactable element of each page of my site before passing this on to be checked remotley by some friens as mentioned in the bugs section.
+
 All code has been validated through:
 - **HTML**: [W3C Markup Validator](https://validator.w3.org/).
+  Each page had its html put through from viewing its source on the websites live preview the results are stored [here.](./TESTING.md) As can be seen each page passe the test.
 - **CSS**: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 
 ![style css valid](https://github.com/user-attachments/assets/e8023920-ef25-4383-98d5-d871efa3a6df)
 
   style.css valid
   
-- **Python**: PEP8 validation to ensure code quality.
+- **Python**: PEP8 validation to ensure code quality. Everything was validated using the [CI Pyhton Linter](https://pep8ci.herokuapp.com/) I validated the following from the review app: admin.py, forms.py, models.py, urls.py and views.py. I also validated the following from the about app: admin.py, models.py, urls.py. and views.py. As can be see from the screenshots [here.](./TESTING.md)
 
 ### Fixed bugs
 
