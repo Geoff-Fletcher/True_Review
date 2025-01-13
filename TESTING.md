@@ -14,6 +14,7 @@ Create
 
 Review Detail
 
+![review detail html issue](https://github.com/user-attachments/assets/eed1bca4-7642-427f-96cd-3574ecff4345)
 
 Screenshots CI Python Linter:
 
