@@ -16,28 +16,33 @@ class Category(models.Model):
 
     @staticmethod
     def film_category():
-        return Category.objects.get_or_create(name="Film",
-               defaults={"description": "Film category"})[0]
+        return Category.objects.get_or_create(
+            name="Film",
+            defaults={"description": "Film category"})[0]
 
     @staticmethod
     def tv_category():
-        return Category.objects.get_or_create(name="TV Series",
-         defaults={"description": "TV Series category"})[0]
+        return Category.objects.get_or_create(
+            name="TV Series",
+            defaults={"description": "TV Series category"})[0]
 
     @staticmethod
     def game_category():
-        return Category.objects.get_or_create(name="Video Game", defaults={"description": "Video Game category"})[0]
+        return Category.objects.get_or_create(
+            name="Video Game",
+            defaults={"description": "Video Game category"})[0]
 
 
 class CommonReviewData(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='reviews')
     featured_image = CloudinaryField('image', default='placeholder')
     title = models.CharField(max_length=100)
     rating = models.IntegerField(validators=[
             MaxValueValidator(100),
             MinValueValidator(0)
         ])
-    slug = models.SlugField(max_length=200, unique=True)   
+    slug = models.SlugField(max_length=200, unique=True)
     review_text = models.TextField()
     release_date = models.DateField()
     status = models.IntegerField(choices=STATUS, default=0)
@@ -53,24 +58,33 @@ class CommonReviewData(models.Model):
 class MovieReview(CommonReviewData):
     runtime = models.DurationField()
     director = models.CharField(max_length=100)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, default=Category.film_category)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL,
+        null=True, default=Category.film_category)
+
 
 class TVReview(CommonReviewData):
     number_of_episodes = models.IntegerField()
     showrunner = models.CharField(max_length=100)
     average_episode_length = models.DurationField()
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, default=Category.tv_category)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL,
+        null=True, default=Category.tv_category)
+
 
 class GameReview(CommonReviewData):
     studio = models.CharField(max_length=100)
     time_to_beat = models.DurationField()
     number_of_players = models.IntegerField()
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, default=Category.game_category)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL,
+        null=True, default=Category.game_category)
 
 
 class Comment(models.Model):
     post = models.ForeignKey(
-    CommonReviewData, on_delete=models.CASCADE, related_name="comments")
+        CommonReviewData,
+        on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="commenter")
     rating = models.IntegerField(validators=[
@@ -85,6 +99,6 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-            return f"{self.body} | written by {self.author}"
+        return f"{self.body} | written by {self.author}"
 
 # Create your models here.

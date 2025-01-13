@@ -45,22 +45,22 @@ def review_detail(request, review_id):
 def index(request):
     # Combine reviews using only the common fields
     movie_reviews = MovieReview.objects.filter(status=1).values(
-    'id', 'title', 'author', 'slug', 'featured_image', 'rating',
-    'release_date', 'created_on', 'category'
+        'id', 'title', 'author', 'slug', 'featured_image', 'rating',
+        'release_date', 'created_on', 'category'
     ).annotate(author_name=F('author__username'))
     tv_reviews = TVReview.objects.filter(status=1).values(
-    'id', 'title', 'author', 'slug', 'featured_image', 'rating',
-    'release_date', 'created_on', 'category'
+        'id', 'title', 'author', 'slug', 'featured_image', 'rating',
+        'release_date', 'created_on', 'category'
     ).annotate(author_name=F('author__username'))
     game_reviews = GameReview.objects.filter(status=1).values(
-    'id', 'title', 'author', 'slug', 'featured_image',
-    'rating', 'release_date', 'created_on', 'category'
+        'id', 'title', 'author', 'slug', 'featured_image',
+        'rating', 'release_date', 'created_on', 'category'
     ).annotate(author_name=F('author__username'))
 
 # Combine all reviews and sort by creation date
     reviews = sorted(
-    list(movie_reviews) + list(tv_reviews) + list(game_reviews),
-    key=lambda x: x['created_on'], reverse=True
+        list(movie_reviews) + list(tv_reviews) + list(game_reviews),
+        key=lambda x: x['created_on'], reverse=True
     )
 
 # Paginate the combined reviews
@@ -113,7 +113,8 @@ def edit_movie_review(request, movie_review_id):
         return redirect('index')
 
     if request.method == "POST":
-        movie_review_form = MovieReviewForm(request.POST, instance=movie_review)
+        movie_review_form = MovieReviewForm(
+            request.POST, instance=movie_review)
         if movie_review_form.is_valid():
             movie_review = movie_review_form.save(commit=False)
             movie_review.author = request.user
@@ -126,8 +127,8 @@ def edit_movie_review(request, movie_review_id):
         movie_review_form = MovieReviewForm(instance=movie_review)
 
     context = {
-    "form": movie_review_form,
-}
+        "form": movie_review_form,
+        }
     return render(request, 'review/edit_moviereview.html', context)
 
 
@@ -174,19 +175,20 @@ def comment_edit(request, review_id, comment_id):
             messages.add_message(request, messages.SUCCESS, 'Comment updated!')
         else:
             # Add an error message if validation fails
-            messages.add_message(request, messages.ERROR, 
+            messages.add_message(request, messages.ERROR,
                                  'Error updating comment!')
 
         # Redirect back to the same page or slug URL
         return redirect('review_detail', review_id=review.id)
 
     # If not a POST request, render the page as usual (optional)
-    return render(request, 'review/comment_edit.html', {'review': review, 'comment': comment})
+    return render(request, 'review/comment_edit.html',
+    {'review': review, 'comment': comment})
 
 
 @login_required
 def comment_delete(request, review_id, comment_id):
-    
+
     # Fetch the corresponding CommonReviewData post
     queryset = CommonReviewData.objects.filter(status=1)  # published reviews
     review = get_object_or_404(MovieReview, id=review_id)
@@ -203,7 +205,8 @@ def comment_delete(request, review_id, comment_id):
                              'You can only delete your comments!')
 
     # Redirect back to the same page or slug URL
-    return render(request, 'review/comment_edit.html', {'review': review, 'comment': comment})
+    return render(
+        request, 'review/comment_edit.html',
+        {'review': review, 'comment': comment})
 
 # Create your views here.
-
