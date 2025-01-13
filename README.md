@@ -309,7 +309,8 @@ I manually tested all the header elements and then each unique interactable elem
 
 All code has been validated through:
 - **HTML**: [W3C Markup Validator](https://validator.w3.org/).
-  Each page had its html put through from viewing its source on the websites live preview the results are stored [here.](./TESTING.md) As can be seen each page passe the test.
+  Each page had its html put through from viewing its source on the websites live preview the results are stored [here.](./TESTING.md) As can be seen each page passed the test with review detail page returning 2 errors both on buttons that would like to have the class comment_id changed to a 'base data' style class but due to how close I am to the submission deadline I will deal with that post-submission since it does not interefere with the smooth running of the project.
+  
 - **CSS**: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 
 ![style css valid](https://github.com/user-attachments/assets/e8023920-ef25-4383-98d5-d871efa3a6df)
@@ -339,7 +340,7 @@ cloudinary.config(
         secure=True,
 )
 
-I tried this and have not currently got it to work.
+I tried this and have not currently got it to work. but plan to do so in the near future as it does not interfere with the project running smoothly
 
 #### bug 5
 
