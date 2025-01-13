@@ -148,14 +148,14 @@ def delete_movie_review(request, movie_review_id):
 
 
 @login_required
-def comment_edit(request, slug, comment_id):
+def comment_edit(request, review_id, comment_id):
 
     # Fetch the corresponding CommonReviewData post
     queryset = CommonReviewData.objects.filter(status=1)  # published reviews
     review = get_object_or_404(MovieReview, id=review_id)
 
     # Fetch the comment by ID
-    comment = get_object_or_404(Comment, id=comment_id, review=review)
+    comment = get_object_or_404(Comment, id=comment_id,)
 
     # Check if the request is a POST
     if request.method == "POST":
@@ -185,11 +185,11 @@ def comment_edit(request, slug, comment_id):
 
 
 @login_required
-def comment_delete(request, slug, comment_id):
+def comment_delete(request, review_id, comment_id):
     
     # Fetch the corresponding CommonReviewData post
     queryset = CommonReviewData.objects.filter(status=1)  # published reviews
-    review = get_object_or_404(MovieReview, slug=slug)
+    review = get_object_or_404(MovieReview, id=review_id)
 
     # Fetch the comment by ID
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -203,7 +203,7 @@ def comment_delete(request, slug, comment_id):
                              'You can only delete your comments!')
 
     # Redirect back to the same page or slug URL
-    return HttpResponseRedirect(reverse('index', args=[slug]))
+    return render(request, 'review/comment_edit.html', {'review': review, 'comment': comment})
 
 # Create your views here.
 

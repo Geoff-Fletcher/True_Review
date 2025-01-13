@@ -40,7 +40,7 @@ class TVReviewAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     fieldsets = (
         ('Basic Info', {
-            'fields': ('title', 'slug', 'author', 'category', 
+            'fields': ('title', 'slug', 'author', 'category',
                        'status', 'featured_image')
         }),
         ('Review Details', {
@@ -89,4 +89,3 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
     approve_comments.short_description = "Mark selected comments as approved"
-
