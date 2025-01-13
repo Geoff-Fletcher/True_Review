@@ -339,6 +339,8 @@ cloudinary.config(
         secure=True,
 )
 
+I tried this and have not currently got it to work.
+
 #### bug 5
 
 I could not get the edit comment to submit and went through many iterations of urls in review/urls.py eventually found by following console 404 messages that needed to be on line 13 :
@@ -348,6 +350,12 @@ I could not get the edit comment to submit and went through many iterations of u
 #### bug 6
 
 This last bug when fixed lead to a return render error for which I was able to correct my views.py and looking at the function: def edit_movie_review(request, movie_review_id) its was tring to take slug as an argument that I removed and this finally enabled it to return to the Review Detail page when an edit was submitted.
+
+#### bug 7
+
+Similar to bug 6 I couldn,t generate the return page properly after the delete.comment function was used and had to keep manually using the back function in the browser twice even though the deletion actually happened. I realised on inspection that the return function I had on line 209 of views.py was referencing review_id but also comment_id and the fact the comment was gone after deletion was confusing the issue so I replaced it as follows:
+return redirect('review_detail', review_id=review.id)
+This finally got it to work.
 
 ### Supported screens and browsers
 
