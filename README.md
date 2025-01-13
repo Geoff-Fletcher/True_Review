@@ -339,6 +339,16 @@ cloudinary.config(
         secure=True,
 )
 
+#### bug 5
+
+I could not get the edit comment to submit and went through many iterations of urls in review/urls.py eventually found by following console 404 messages that needed to be on line 13 :
+ path('reviews/<int:review_id>/edit_comment/<int:comment_id>/',
+         views.comment_edit, name='comment_edit'),
+
+#### bug 6
+
+This last bug when fixed lead to a return render error for which I was able to correct my views.py and looking at the function: def edit_movie_review(request, movie_review_id) its was tring to take slug as an argument that I removed and this finally enabled it to return to the Review Detail page when an edit was submitted.
+
 ### Supported screens and browsers
 
 #### Screens
