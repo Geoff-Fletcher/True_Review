@@ -182,8 +182,9 @@ def comment_edit(request, review_id, comment_id):
         return redirect('review_detail', review_id=review.id)
 
     # If not a POST request, render the page as usual (optional)
-    return render(request, 'review/comment_edit.html',
-    {'review': review, 'comment': comment})
+    return render(
+        request, 'review/comment_edit.html',
+        {'review': review, 'comment': comment})
 
 
 @login_required
