@@ -206,8 +206,6 @@ def comment_delete(request, review_id, comment_id):
                              'You can only delete your comments!')
 
     # Redirect back to the same page or slug URL
-    return render(
-        request, 'review/comment_edit.html',
-        {'review': review, 'comment': comment})
+    return redirect('review_detail', review_id=review.id)
 
 # Create your views here.
